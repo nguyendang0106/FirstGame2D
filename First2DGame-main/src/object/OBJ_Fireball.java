@@ -12,11 +12,9 @@ public class OBJ_Fireball extends Projectile{
 	GamePanel gp;
 	public static final String objName = "Fireball";
 
-	
 	public OBJ_Fireball(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
-		
 		name = objName;
 		speed = 5;
 		maxLife = 80;
@@ -26,7 +24,6 @@ public class OBJ_Fireball extends Projectile{
 		useCost = 1;
 		alive  = false;
 		getImage();
-		
 	}
 	
 	public void getImage() {
@@ -38,7 +35,6 @@ public class OBJ_Fireball extends Projectile{
 		left2 = setup("/projectile/fireball_left_2", gp.tileSize, gp.tileSize);
 		right1 = setup("/projectile/fireball_right_1", gp.tileSize, gp.tileSize);
 		right2 = setup("/projectile/fireball_right_2", gp.tileSize, gp.tileSize);
-
 	}
 	public boolean haveResource(Entity user) {
 		

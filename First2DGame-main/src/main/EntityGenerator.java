@@ -28,7 +28,6 @@ public class EntityGenerator {
 	public EntityGenerator(GamePanel gp) {
 		this.gp = gp;
 	}
-
 	public Entity getObject(String itemName) {
 
 		Entity obj = null;

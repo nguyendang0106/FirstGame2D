@@ -1,6 +1,13 @@
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import entity.*;
+import java.util.HashMap;
+import java.util.Map;
 import monster.*;
 import object.*;
 import tile_interactive.*;
@@ -208,103 +215,49 @@ public class AssetSetter {
 		// }
 	}
 	public void setInteractiveTile() {
-	// 	int mapNum = 0;
-	// 	int i = 0;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 27, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 28, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 29, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 30, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 31, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 32, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 33, 12);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 31, 21);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 18, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 17, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 16, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 15, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 14, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 13, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 13, 41);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 12, 41);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 11, 41);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 10, 41);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 10, 40);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 25, 27);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 26, 27);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 27, 28);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 27, 29);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 27, 30);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 27, 31);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 28, 31);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_Drytree(gp, 29, 31);
-	// 	i++;
-	// 	mapNum = 2;
-	// 	i = 0;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 18, 30);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 17, 31);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 17, 32);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 17, 34);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 18, 34);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 18, 33);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 10, 22);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 10, 24);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 38, 18);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 38, 19);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 38, 20);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 38, 21);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 18, 13);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 18, 14);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 22, 28);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 30, 28);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_DestructibleWall(gp, 32, 28);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 20, 22);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 8, 17);
-	// 	i++;
-	// 	gp.iTile[mapNum][i] = new IT_MetalPlate(gp, 39, 31);
-	// 	i++;
-	}
-}
+		Map<Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map
+		
+		InputStream is = getClass().getResourceAsStream("/maps/ITobject.txt");
+		if (is == null) {
+			System.err.println("Could not find ITobject.txt file");
+			return;
+		}
+	
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		String line;
+		
+		try {
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+				String[] parts = line.split(" ");
+				if (parts.length == 4) {
+					int mapNum = Integer.parseInt(parts[0]); 
+					int type = Integer.parseInt(parts[1]);
+					int x = Integer.parseInt(parts[2]);
+					int y = Integer.parseInt(parts[3]);
+					
+					// Get or initialize index for this map
+					int index = mapIndices.getOrDefault(mapNum, 0);
+					
+					if (type == 704 || type == 731 || type == 758 || 
+						type == 812 || type == 839 || type == 785) {
+						gp.iTile[mapNum][index] = new IT_Trunk(gp, y, x, type);
+					} else {
+						gp.iTile[mapNum][index] = new IT_tree(gp, y, x, type);
+					}
+					// Increment and store the index for this map
+					mapIndices.put(mapNum, index + 1);
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (reader != null) {
+					reader.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}}

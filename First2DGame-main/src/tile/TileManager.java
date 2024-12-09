@@ -60,20 +60,16 @@ public class TileManager {
 		try {
 			String line2 = br.readLine();
 			String maxTile[] = line2.split(" ");
-			
-			
 			gp.maxWorldCol = 150;
 			gp.maxWorldRow = 120;
 			mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
-
 			br.close();
-
 		}catch(IOException e) {
 			System.out.println("Exception!");
 		}
 		// LOAD THE MAP
+		loadMap("/maps/oasis2.txt", 0);
 		loadMap("/maps/land.txt", 1);
-		loadMap("/maps/oasis.txt", 0);
 		loadMap("/maps/maze.txt", 2);
 	}
 	

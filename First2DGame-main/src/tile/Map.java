@@ -47,8 +47,6 @@ public class Map extends TileManager{
 		}
 	}
 	public void drawFullMapScreen(Graphics2D g2) {
-		
-		
 		// Background Color
 		g2.setColor(Color.black);
 		g2.fillRect(0,  0, gp.screenWidth, gp.screenHeight);
@@ -69,48 +67,27 @@ public class Map extends TileManager{
 		g2.setColor(Color.white);
 		g2.drawString("Press M To Close", 750, 550);
 	}
-	// public void drawMiniMap(Graphics2D g2) {
-	// 	if(miniMapOn == true) {
-	// 		// Draw Map
-	// 		int width = 150;
-	// 		int height = 120;
-	// 		int x = gp.screenWidth - width - 50;
-	// 		int y = 50;
-	// 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.8f));
-	// 		g2.drawImage(worldMap[gp.currentMap], x, y, width, height, null);
-			
-	// 		// Draw Player
-	// 		double scale = (double)(gp.tileSize * gp.maxWorldCol)/width;
-	// 		int playerX = (int)(x + gp.player.worldX/scale);
-	// 		int playerY = (int)(y + gp.player.worldY/scale);
-	// 		int playerSize= (int)(gp.tileSize/3);
-	// 		g2.drawImage(gp.player.down1, playerX-6, playerY-6, playerSize, playerSize, null);
-	// 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
-	// 	}
-	// }
-		public void drawMiniMap(Graphics2D g2) {
-			if (miniMapOn) {
-				// Define the portion of the map to draw
-				int mapPortionX = 25; // Starting x-coordinate of the portion
-				int mapPortionY = 10; // Starting y-coordinate of the portion
-				int mapPortionWidth = 100; // Width of the portion
-				int mapPortionHeight = 100; // Height of the portion
-		
-				// Draw Map
-				int width = 200;
-				int height = 200;
-				int x = gp.screenWidth - width - 50;
-				int y = 50;
-				g2.drawImage(worldMap[gp.currentMap], x, y, x + width, y + height, mapPortionX, mapPortionY, mapPortionX + mapPortionWidth, mapPortionY + mapPortionHeight, null);
-				g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 
-				// Draw Player
-				double scale = (double)(gp.tileSize * gp.maxWorldCol) / width;
-				int playerX = (int)(x + gp.player.worldX / scale);
-				int playerY = (int)(y + gp.player.worldY / scale);
-				int playerSize = (int)(gp.tileSize / 3);
-				g2.drawImage(gp.player.down1, playerX - 6, playerY - 6, playerSize, playerSize, null);
-				g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
-			}
+	public void drawMiniMap(Graphics2D g2) {
+		if (miniMapOn == true) {
+			// Draw Map
+			int width = 150;
+			int height = 150;
+			double scale = (double)(gp.tileSize * gp.maxWorldCol) / width;
+			int x = gp.screenWidth - width - 50;
+			int y = 50;
+			int mapPortionX =(int)(25*scale); // Starting x-coordinate of the portion
+			int mapPortionY =(int)(10*scale); // Starting y-coordinate of the portion
+			int mapPortionWidth =(int)(100*scale); // Width of the portion
+			int mapPortionHeight = (int)(100*scale); // Height of the portion
+			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.8f));
+			g2.drawImage(worldMap[gp.currentMap], x, y, x + width, y + height, mapPortionX, mapPortionY, mapPortionX + mapPortionWidth, mapPortionY + mapPortionHeight, null);
+			// Draw Player
+			int playerX = (int)(x + 1.5*(gp.player.worldX - mapPortionX)/scale)-8;
+			int playerY = (int)(y + 1.5*(gp.player.worldY - mapPortionY)/ scale)-12;
+			int playerSize = (int)(gp.tileSize / 3);
+			g2.drawImage(gp.player.down1, playerX, playerY, playerSize, playerSize, null);
+			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 		}
+	}
 }

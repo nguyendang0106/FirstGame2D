@@ -30,10 +30,8 @@ public class Main {
 		
 		gamePanel.setUpGame();
 		gamePanel.startGameThread();
-
 	}
 	public void setIcon() {
-		
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("player/boy_down_1.png"));
 		window.setIconImage(icon.getImage());
 	}

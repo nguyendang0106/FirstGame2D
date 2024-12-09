@@ -22,8 +22,8 @@ public class GamePanel extends JPanel implements Runnable{
 	final int originalTileSize = 16; // 16x16 tile
 	final int scale = 3;
 	public final int tileSize = originalTileSize * scale; // 48x48 tile
-	public final int maxScreenCol = 20;
-	public final int maxScreenRow = 12;
+	public final int maxScreenCol = 30;
+	public final int maxScreenRow = 18;
 	public final int screenWidth = tileSize * maxScreenCol; // 960 pixels
 	public final int screenHeight = tileSize * maxScreenRow; // 576 pixels
 	
@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public int maxWorldCol;
 	public int maxWorldRow;
 	public final int maxMap = 16;
-	public int currentMap = 0;
+	public int currentMap = 2;
 	
 	// FOR FULL SCREEN
 	int screenWidth2 = screenWidth;
@@ -63,7 +63,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public Entity obj[][] = new Entity[maxMap][20];
 	public Entity npc[][] = new Entity[maxMap][10];
 	public Entity monster[][] = new Entity[maxMap][20];
-	public InteractiveTile iTile[][] = new InteractiveTile[maxMap][50];
+	public InteractiveTile iTile[][] = new InteractiveTile[maxMap][3200];
 	public Entity projectile[][] = new Entity[maxMap][20];
 //	public ArrayList<Entity> projectileList = new ArrayList<>();
 	public ArrayList<Entity> particleList = new ArrayList<>();
@@ -346,7 +346,6 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		music.stop();
 	}
-	
 	public void playSE(int i) {
 		
 		se.setFile(i);

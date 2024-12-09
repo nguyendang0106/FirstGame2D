@@ -14,13 +14,11 @@ public class InteractiveTile extends Entity{
 		super(gp);
 		this.gp = gp;
 	}
-	
 	public boolean isCorrectItem(Entity entity) {
 		boolean isCorrectItem = false;
 		return isCorrectItem;
 	}
 	public void playSE() {
-		
 	}
 	public InteractiveTile getDestroyedForm() {
 		InteractiveTile tile = null;
@@ -45,10 +43,7 @@ public class InteractiveTile extends Entity{
 		   worldX - gp.tileSize < gp.player.worldX + gp.player.screenX &&
 		   worldY + gp.tileSize > gp.player.worldY - gp.player.screenY &&
 		   worldY - gp.tileSize < gp.player.worldY + gp.player.screenY) {
-			
-			
 			g2.drawImage(down1, screenX, screenY, null);
-
 		}
 	}
 }
