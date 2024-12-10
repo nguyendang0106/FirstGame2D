@@ -2,15 +2,12 @@ package tile;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-
 import javax.imageio.ImageIO;
-
 import main.GamePanel;
 import main.UtilityTool;
 
@@ -26,12 +23,6 @@ public class TileManager {
 	
 	public TileManager(GamePanel gp) {
 		this.gp = gp;
-		
-//		tile = new Tile[50];
-//		mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
-//		getTileImage();
-		
-		// READ TILE DATA FILE
 		InputStream is = getClass().getResourceAsStream("/maps/newtilesdata.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		
@@ -58,8 +49,8 @@ public class TileManager {
 		br = new BufferedReader(new InputStreamReader(is));
 		
 		try {
-			String line2 = br.readLine();
-			String maxTile[] = line2.split(" ");
+			// String line2 = br.readLine();
+			// String maxTile[] = line2.split(" ");
 			gp.maxWorldCol = 150;
 			gp.maxWorldRow = 120;
 			mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
@@ -68,7 +59,7 @@ public class TileManager {
 			System.out.println("Exception!");
 		}
 		// LOAD THE MAP
-		loadMap("/maps/oasis2.txt", 0);
+		loadMap("/maps/oasis.txt", 0);
 		loadMap("/maps/land.txt", 1);
 		loadMap("/maps/maze.txt", 2);
 	}
@@ -108,35 +99,34 @@ public class TileManager {
 	public void loadMap(String filePath, int map) {
 		try {
 			InputStream is = getClass().getResourceAsStream(filePath);
-			BufferedReader br = new BufferedReader(new InputStreamReader(is));
-			int col = 0;
-			int row = 0;
-			while(col < gp.maxWorldCol && row < gp.maxWorldRow) {
-				String line = br.readLine();
-				while(col < gp.maxWorldCol) {
-					String numbers[] = line.split(" ");
-					int num = Integer.parseInt(numbers[col]);
-					mapTileNum[map][col][row] = num;
-					col++;
+			try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+				int col = 0;
+				int row = 0;
+				while(col < gp.maxWorldCol && row < gp.maxWorldRow) {
+					String line = br.readLine();
+					while(col < gp.maxWorldCol) {
+						String numbers[] = line.split(" ");
+						int num = Integer.parseInt(numbers[col]);
+						mapTileNum[map][col][row] = num;
+						col++;
+					}
+					if(col == gp.maxWorldCol) {
+						col = 0;
+						row++;
+					}
 				}
-				if(col == gp.maxWorldCol) {
-					col = 0;
-					row++;
-				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			br.close();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	
 	public void draw(Graphics2D g2) {
 		int worldCol = 0;
 		int worldRow = 0;
 		while(worldCol < gp.maxWorldCol && worldRow < gp.maxWorldRow) {
-			
 			int tileNum = mapTileNum[gp.currentMap][worldCol][worldRow];
 			
 			int worldX = worldCol * gp.tileSize;
@@ -151,9 +141,7 @@ public class TileManager {
 				
 				g2.drawImage(tile[tileNum].image, screenX, screenY, null);
 			}
-			
 			worldCol++;
-			
 			if(worldCol == gp.maxWorldCol) {
 				worldCol = 0;
 				worldRow++;
@@ -161,14 +149,11 @@ public class TileManager {
 		}
 		if(drawPath == true) {
 			g2.setColor(new Color(255, 0, 0, 70));
-			
 			for(int i = 0; i < gp.pFinder.pathList.size(); i++) {
-				
 				int worldX = gp.pFinder.pathList.get(i).col * gp.tileSize;
 				int worldY = gp.pFinder.pathList.get(i).row * gp.tileSize;
 				int screenX = worldX - gp.player.worldX + gp.player.screenX;
 				int screenY = worldY - gp.player.worldY + gp.player.screenY;
-				
 				g2.fillRect(screenX, screenY, gp.tileSize, gp.tileSize);
 			}
 		}

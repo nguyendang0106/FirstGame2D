@@ -1,9 +1,8 @@
 package monster;
 
-import java.util.Random;
-
 import data.Progress;
 import entity.Entity;
+import java.util.Random;
 import main.GamePanel;
 import object.OBJ_Coin_Bronze;
 import object.OBJ_Door_Iron;
@@ -79,9 +78,7 @@ public class MON_SkeletonLord extends Entity {
 	}
 
 	public void getAttackImage() {
-
 		int i = 3;
-
 		if (inRage == false) {
 			attackUp1 = setup("/monster/bossphase1_attackup_1", gp.tileSize * i, gp.tileSize * i * 2);
 			attackUp2 = setup("/monster/bossphase1_attackup_2", gp.tileSize * i, gp.tileSize * i * 2);
@@ -102,19 +99,15 @@ public class MON_SkeletonLord extends Entity {
 			attackRight1 = setup("/monster/bossphase2_attackright_1", gp.tileSize * i * 2, gp.tileSize * i);
 			attackRight2 = setup("/monster/bossphase2_attackright_2", gp.tileSize * i * 2, gp.tileSize * i);
 		}
-
 	}
 
 	public void setDialogue() {
-
 		dialogues[0][0] = "No one can steal OnePiece!";
 		dialogues[0][1] = "You will die here!";
 		dialogues[0][2] = "WELCOME TO YOUR DOOM!\nHAHAHA!!!";
-
 	}
 
 	public void setAction() {
-
 		if (inRage == false && life < maxLife / 2) {
 			inRage = true;
 			getImage();
@@ -123,15 +116,12 @@ public class MON_SkeletonLord extends Entity {
 			speed = defaultSpeed;
 			attack *= 2;
 		}
-
 		if (getTileDistance(gp.player) < 10) {
 			moveTowardPlayer(60);
 		} else {
-
 			// Get a random direction
 			getRandomDirection(120);
 		}
-
 		// Check if it attacks
 		if (attacking == false) {
 			checkAttackOrNot(60, gp.tileSize * 7, gp.tileSize * 5);

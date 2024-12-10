@@ -2,14 +2,8 @@ package entity;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.ArrayList;
-
-import javax.imageio.ImageIO;
-
 import main.GamePanel;
 import main.KeyHandler;
-import main.UtilityTool;
 import object.*;
 
 public class Player extends Entity {
@@ -52,17 +46,9 @@ public class Player extends Entity {
 		// setItems();
 
 	}
-
 	public void setDefaultValues() {
-
-		worldX = gp.tileSize * 64;
-		worldY = gp.tileSize * 69;
-		// worldX = gp.tileSize * 12;
-		// worldY = gp.tileSize * 12;
-		// gp.currentMap = 1;
-		// // dungeon entrance
-		// worldX = gp.tileSize*12;
-		// worldY = gp.tileSize*11;
+		worldX = gp.tileSize * 70;
+		worldY = gp.tileSize * 60;
 		defaultSpeed = 4;
 		speed = defaultSpeed;
 		direction = "down";
@@ -94,8 +80,8 @@ public class Player extends Entity {
 
 	public void setDefaultPositions() {
 		gp.currentMap = 0;
-		worldX = gp.tileSize * (gp.maxScreenCol / 3);
-		worldY = gp.tileSize * (gp.maxScreenRow / 3);
+		worldX = gp.tileSize * 70;
+		worldY = gp.tileSize * 60;
 		direction = "down";
 	}
 
@@ -222,8 +208,8 @@ public class Player extends Entity {
 
 	}
 
+	@Override
 	public void update() {
-
 		if (knockBack == true) {
 			collisionOn = false;
 			gp.cChecker.checkTile(this);
@@ -392,34 +378,29 @@ public class Player extends Entity {
 
 		if (i != 999) {
 
-			// PICKUP ONLY ITEMS
-			if (gp.obj[gp.currentMap][i].type == type_pickupOnly) { // FIXED
-
-				gp.obj[gp.currentMap][i].use(this); // FIXED
-				gp.obj[gp.currentMap][i] = null; // FIXED
-			}
-			// OBSTACLE
-			else if (gp.obj[gp.currentMap][i].type == type_obstacle) {
-				if (keyH.enterPressed == true) {
-					attackCanceled = true;
-					gp.obj[gp.currentMap][i].interact();
+			// Handle different object types
+			switch(gp.obj[gp.currentMap][i].type) {
+				case type_pickupOnly -> {
+					gp.obj[gp.currentMap][i].use(this);
+					gp.obj[gp.currentMap][i] = null;
 				}
-			}
-
-			// INVENTORY ITEMS
-			else {
-				String text;
-
-				if (canObtainItem(gp.obj[gp.currentMap][i]) == true) {
-
-					// inventory.add(gp.obj[gp.currentMap][i]); //FIXED
-					gp.playSE(1);
-					text = "Got a " + gp.obj[gp.currentMap][i].name + "!"; // FIXED
-				} else {
-					text = "You cannot carry anymore!";
+				case type_obstacle -> {
+					if (keyH.enterPressed == true) {
+						attackCanceled = true;
+						gp.obj[gp.currentMap][i].interact();
+					}
 				}
-				gp.ui.addMessage(text);
-				gp.obj[gp.currentMap][i] = null; // FIXED DON'T FORGET THIS!!!!!
+				default -> {
+					String text;
+					if (canObtainItem(gp.obj[gp.currentMap][i]) == true) {
+						gp.playSE(1);
+						text = "Got a " + gp.obj[gp.currentMap][i].name + "!";
+					} else {
+						text = "You cannot carry anymore!";
+					}
+					gp.ui.addMessage(text);
+					gp.obj[gp.currentMap][i] = null;
+				}
 			}
 		}
 	}
@@ -631,7 +612,7 @@ public class Player extends Entity {
 		}
 		return canObtain;
 	}
-
+	@Override
 	public void draw(Graphics2D g2) {
 
 		// g2.setColor(Color.white);

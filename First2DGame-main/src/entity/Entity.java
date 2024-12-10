@@ -8,9 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
-
 import main.GamePanel;
 import main.UtilityTool;
 
@@ -354,7 +352,6 @@ public class Entity {
 					 case "right": worldX += speed; break;
 					 }
 				}
-				
 				spriteCounter++;
 				if(spriteCounter > 24) {
 					if(spriteNum == 1) {
@@ -829,11 +826,11 @@ public class Entity {
 		int nextWorldX = user.getLeftX();
 		int nextWorldY = user.getTopY();
 		
-		switch(user.direction) {
-		case "up": nextWorldY = user.getTopY() - gp.player.speed; break;
-		case "down": nextWorldY = user.getBottomY() + gp.player.speed;; break;
-		case "left": nextWorldX = user.getLeftX() - gp.player.speed;; break;
-		case "right": nextWorldX = user.getRightX() + gp.player.speed;; break;
+		switch (user.direction) {
+			case "up" -> nextWorldY = user.getTopY() - gp.player.speed;
+			case "down" -> nextWorldY = user.getBottomY() + gp.player.speed;
+			case "left" -> nextWorldX = user.getLeftX() - gp.player.speed;
+			case "right" -> nextWorldX = user.getRightX() + gp.player.speed;
 		}
 		int col = nextWorldX/gp.tileSize;
 		int row = nextWorldY/gp.tileSize;

@@ -1,15 +1,12 @@
 package tile_interactive;
 
-import java.awt.Graphics2D;
-
 import entity.Entity;
+import java.awt.Graphics2D;
 import main.GamePanel;
 
 public class InteractiveTile extends Entity{
-	
 	GamePanel gp;
 	public boolean destructible = false;
-
 	public InteractiveTile(GamePanel gp, int col, int row) {
 		super(gp);
 		this.gp = gp;
@@ -24,6 +21,7 @@ public class InteractiveTile extends Entity{
 		InteractiveTile tile = null;
 		return tile;
 	}
+	@Override
 	public void update() {
 		
 		if(invincible == true) {
@@ -34,6 +32,7 @@ public class InteractiveTile extends Entity{
 			}
 		 }
 	}
+	@Override
 	public void draw(Graphics2D g2) {
 		
 		int screenX = worldX - gp.player.worldX + gp.player.screenX;

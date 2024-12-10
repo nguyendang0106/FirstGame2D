@@ -4,9 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 public class Main {
-
 	public static JFrame window;
-
 	public static void main(String[] args) {
 		
 	    window = new JFrame();
@@ -14,7 +12,6 @@ public class Main {
 		window.setResizable(false);
 		window.setTitle("Mystic Adventure");
 		new Main().setIcon();
-		
 		GamePanel gamePanel = new GamePanel();
 		window.add(gamePanel);
 		
@@ -22,9 +19,7 @@ public class Main {
 		if(gamePanel.fullScreenOn == true) {
 			window.setUndecorated(true);
 		}
-		
 		window.pack();
-		
 		window.setLocationRelativeTo(null);
 		window.setVisible(true);
 		
@@ -35,5 +30,4 @@ public class Main {
 		ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("player/boy_down_1.png"));
 		window.setIconImage(icon.getImage());
 	}
-
 }

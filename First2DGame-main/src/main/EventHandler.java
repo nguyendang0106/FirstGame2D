@@ -62,26 +62,27 @@ public class EventHandler{
 			canTouchEvent = true;
 		}
 		if(canTouchEvent == true) {
-			if(hit(0,27,16,"right")) { damagePit(gp.dialogueState);}
-//			if(hit(0,23,19,"any")) { damagePit(gp.dialogueState);}
-//			if(hit(0,27,16,"right") == true) { teleport(gp.dialogueState);}
-			else if(hit(0,23,12,"up") == true) { healingPool(gp.dialogueState);}
-			else if(hit(0,10,39,"any") == true) {teleport2(1,12,13,gp.indoor);} // to the merchant's house
-			else if(hit(1,12,13,"any") == true) {teleport2(0,10,39,gp.outside);} // to outside
-			else if(hit(1,12,9,"up") == true) {speak(gp.npc[1][0]);}
-			else if(hit(0,12,9,"any") == true) {teleport2(2,9,41,gp.dungeon);} // to the dungeon
-			else if(hit(2,9,41,"any") == true) {teleport2(0,12,9,gp.outside);} // to outside
-			else if(hit(2,8,7,"any") == true) {teleport2(3,26,41,gp.dungeon);} // to B2
-			else if(hit(3,26,41,"any") == true) {teleport2(2,8,7,gp.dungeon);} // to B1
-			else if(hit(3,25,27,"any") == true) {skeletonLord();} // BOSS
+// 			if(hit(0,27,16,"right")) { damagePit(gp.dialogueState);}
+// //			if(hit(0,23,19,"any")) { damagePit(gp.dialogueState);}
+// //			if(hit(0,27,16,"right") == true) { teleport(gp.dialogueState);}
+// 			else if(hit(0,23,12,"up") == true) { healingPool(gp.dialogueState);}
+// 			else if(hit(0,10,39,"any") == true) {teleport2(1,12,13,gp.indoor);} // to the merchant's house
+// 			else if(hit(1,12,13,"any") == true) {teleport2(0,10,39,gp.outside);} // to outside
+// 			else if(hit(1,12,9,"up") == true) {speak(gp.npc[1][0]);}
+// 			else if(hit(0,12,9,"any") == true) {teleport2(2,9,41,gp.dungeon);} // to the dungeon
+// 			else if(hit(2,9,41,"any") == true) {teleport2(0,12,9,gp.outside);} // to outside
+// 			else if(hit(2,8,7,"any") == true) {teleport2(3,26,41,gp.dungeon);} // to B2
+// 			else if(hit(3,26,41,"any") == true) {teleport2(2,8,7,gp.dungeon);} // to B1
+// 			else if(hit(3,25,27,"any") == true) {skeletonLord();} // BOSS
+			//new teleport ẻvent
+			if(hit(0, 41, 17, "any")==true) teleport2(0,28,84,gp.oasis);
+			if(hit(0, 87, 97, "any")==true) teleport2(0, 120, 84, gp.oasis);
+			if (hit(0, 76, 64, "any")==true) teleport2(1, 28, 105, gp.land);
 		}
 	}
 	public boolean hit(int map, int col, int row, String reqDirection) {
-		
 		boolean hit = false;
-		
 		if(map == gp.currentMap) {
-			
 			gp.player.solidArea.x = gp.player.worldX + gp.player.solidArea.x;
 			gp.player.solidArea.y = gp.player.worldY + gp.player.solidArea.y;
 			eventRect[map][col][row].x = col*gp.tileSize + eventRect[map][col][row].x;
@@ -101,11 +102,11 @@ public class EventHandler{
 		}
 		return hit;
 	}
-	public void teleport(int gameState) {
+	public void teleport(int gameState, int col, int row) {
 		gp.gameState = gameState;
 		gp.ui.currentDialogue = "Teleport!!!";
-		gp.player.worldX = gp.tileSize*37;
-		gp.player.worldY = gp.tileSize*10;
+		gp.player.worldX = gp.tileSize*col;
+		gp.player.worldY = gp.tileSize*row;
 	}
 	public void damagePit(int gameState) {
 		gp.gameState = gameState;
@@ -135,16 +136,14 @@ public class EventHandler{
 		canTouchEvent = false;
 		gp.playSE(13);
 	}
-	public void speak(Entity entity) {
-		
+	public void speak(Entity entity) {	
 		if(gp.keyH.enterPressed == true) {
 			gp.gameState = gp.dialogueState;
 			gp.player.attackCanceled = true;
 			entity.speak();
 		}
 	}
-	public void skeletonLord() {
-		
+	public void skeletonLord() {	
 		if(gp.bossBattleOn == false && Progress.skeletonLordDefeated == false) {
 			gp.gameState = gp.cutsceneState;
 			gp.csManager.sceneNum = gp.csManager.skeletonLord;

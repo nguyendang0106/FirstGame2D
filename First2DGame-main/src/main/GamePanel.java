@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public int maxWorldCol;
 	public int maxWorldRow;
 	public final int maxMap = 16;
-	public int currentMap = 2;
+	public int currentMap = 0;
 	
 	// FOR FULL SCREEN
 	int screenWidth2 = screenWidth;
@@ -62,13 +62,15 @@ public class GamePanel extends JPanel implements Runnable{
 	public Player player = new Player(this, keyH);
 	public Entity obj[][] = new Entity[maxMap][20];
 	public Entity npc[][] = new Entity[maxMap][10];
-	public Entity monster[][] = new Entity[maxMap][20];
+	public Entity monster[][] = new Entity[maxMap][500];
 	public InteractiveTile iTile[][] = new InteractiveTile[maxMap][3200];
 	public Entity projectile[][] = new Entity[maxMap][20];
 //	public ArrayList<Entity> projectileList = new ArrayList<>();
 	public ArrayList<Entity> particleList = new ArrayList<>();
 	ArrayList<Entity> entityList = new ArrayList<>();
 	// GAME STATE
+
+	
 	public int gameState;
 	public final int titleState = 0;
 	public final int playState = 1;
@@ -87,9 +89,9 @@ public class GamePanel extends JPanel implements Runnable{
 	// AREA
 	public int currentArea;
 	public int nextArea;
-	public final int outside = 50;
-	public final int indoor = 51;
-	public final int dungeon = 52;
+	public final int oasis = 50;
+	public final int land = 51;
+	public final int maze = 52;
 
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -98,9 +100,7 @@ public class GamePanel extends JPanel implements Runnable{
 		this.addKeyListener(keyH);
 		this.setFocusable(true);
 	}
-	
 	public void setUpGame() {
-		
 		aSetter.setObject();
 		aSetter.setNPC();
 		aSetter.setMonster();
@@ -109,7 +109,7 @@ public class GamePanel extends JPanel implements Runnable{
 //		playMusic(0);
 //		stopMusic();
 		gameState = titleState;
-		currentArea = outside;
+		currentArea = oasis;
 	
 		tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB_PRE);
 		g2 = (Graphics2D)tempScreen.getGraphics();
@@ -120,7 +120,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	public void resetGame(boolean restart) {
 		stopMusic();
-		currentArea = outside;
+		currentArea = oasis;
 		removeTempEntity();	
 		bossBattleOn = false;
 		player.setDefaultPositions();
@@ -164,6 +164,7 @@ public class GamePanel extends JPanel implements Runnable{
 		int drawCount = 0;
 		while(gameThread != null) {
 			currentTime = System.nanoTime();
+			
 			delta += (currentTime - lastTime) / drawInterval;
 			timer += (currentTime - lastTime);
 			lastTime = currentTime;
@@ -317,12 +318,10 @@ public class GamePanel extends JPanel implements Runnable{
 					int x = 10;
 					int y = 400;
 					int lineHeight = 20;
-					
 					g2.drawString("WorldX" + player.worldX, x, y); y += lineHeight;
 					g2.drawString("WorldY" + player.worldY, x, y); y += lineHeight;
 					g2.drawString("Col" + (player.worldX + player.solidArea.x)/tileSize, x, y); y += lineHeight;
 					g2.drawString("Row" + (player.worldY + player.solidArea.y)/tileSize, x, y); y += lineHeight;
-
 					g2.drawString("Draw Time: " + passed, x, y); y += lineHeight;
 					g2.drawString("God Mode: " + keyH.godModeOn, x, y); y += lineHeight;
 
@@ -352,31 +351,24 @@ public class GamePanel extends JPanel implements Runnable{
 		se.play();
 	}
 	public void changeArea() {
-		
 		if(nextArea != currentArea) {
-			
 			stopMusic();
-			
-			if(nextArea == outside) {
+			if(nextArea == oasis) {
 				playMusic(0);
 			}
-			if(nextArea == indoor) {
+			if(nextArea == land) {
 				playMusic(18);
 			}
-			if(nextArea == dungeon) {
+			if(nextArea == maze) {
 				playMusic(19);
 			}
-			
 			aSetter.setNPC();
 		}
-		
 		currentArea = nextArea;
 		aSetter.setMonster();
 	}
 	public void removeTempEntity() {
-		
 		for(int mapNum = 0; mapNum < maxMap; mapNum++) {
-			
 			for(int i = 0; i < obj[1].length; i++) {
 				if(obj[mapNum][i] != null && obj[mapNum][i].temp == true) {
 					obj[mapNum][i] = null;
