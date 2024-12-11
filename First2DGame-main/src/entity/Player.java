@@ -548,6 +548,7 @@ public class Player extends Entity {
 
 				currentShield = selectedItem;
 				defense = getDefense();
+				// getGuardImage();
 			}
 			if (selectedItem.type == type_light) {
 
