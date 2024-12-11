@@ -1,10 +1,9 @@
 package main;
 
+import entity.PlayerDummy;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Graphics2D;
-
-import entity.PlayerDummy;
 import monster.MON_SkeletonLord;
 import object.OBJ_BlueHeart;
 import object.OBJ_Door_Iron;
@@ -219,22 +218,18 @@ public class CutsceneManager {
 			counterReached = true;
 			counter = 0;
 		}
-		
 		return counterReached;
 	}
 	public void drawBlackBackground(float alpha) {
-		
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));	
 		g2.setColor(Color.black);
 		g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 	}
 	public void drawString(float alpha, float fontSize, int y, String text, int lineHeight) {
-	
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
 		g2.setColor(Color.white);
 		g2.setFont(g2.getFont().deriveFont(fontSize));
-		
 		for(String line: text.split("\n")) {
 			int x = gp.ui.getXforCenteredText(line);
 			g2.drawString(line, x, y);

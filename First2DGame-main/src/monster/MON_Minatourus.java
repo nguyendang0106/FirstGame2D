@@ -10,14 +10,10 @@ import object.OBJ_ManaCrystal;
 import object.OBJ_Rock;
 
 public class MON_Minatourus extends Entity {
-
     GamePanel gp;
-
     public MON_Minatourus(GamePanel gp) {
         super(gp);
-
         this.gp = gp;
-
         type = type_monster;
         name = "Minatourus";
         defaultSpeed = 1;
@@ -28,7 +24,6 @@ public class MON_Minatourus extends Entity {
         defense = 2;
         exp = 10;
         knockBackPower = 5;
-
         solidArea.x = 4;
         solidArea.y = 4;
         solidArea.width = 35;
@@ -39,14 +34,10 @@ public class MON_Minatourus extends Entity {
         attackArea.height = 25;
         motion1_duration = 40;
         motion2_duration = 85;
-
         getImage();
         getAttackImage();
-
     }
-
     public void getImage() {
-
         up1 = setup("/monster/minatourus_up_1", gp.tileSize, gp.tileSize);
         up2 = setup("/monster/minatourus_up_2", gp.tileSize, gp.tileSize);
         down1 = setup("/monster/minatourus_down_1", gp.tileSize, gp.tileSize);
@@ -55,11 +46,9 @@ public class MON_Minatourus extends Entity {
         left2 = setup("/monster/minatourus_left_2", gp.tileSize, gp.tileSize);
         right1 = setup("/monster/minatourus_right_1", gp.tileSize, gp.tileSize);
         right2 = setup("/monster/minatourus_right_2", gp.tileSize, gp.tileSize);
-
     }
 
     public void getAttackImage() {
-
         attackUp1 = setup("/monster/minatourus_attackup_1", gp.tileSize, gp.tileSize
                 * 2);
         attackUp2 = setup("/monster/minatourus_attackup_2", gp.tileSize, gp.tileSize
@@ -79,12 +68,9 @@ public class MON_Minatourus extends Entity {
     }
 
     public void setAction() {
-
         if (onPath == true) {
-
             // Check if it stop chasing
             checkStopChasingOrNot(gp.player, 15, 100);
-
             // Search the direction to go
             searchPath(getGoalCol(gp.player), getGoalRow(gp.player));
         } else {
@@ -94,7 +80,6 @@ public class MON_Minatourus extends Entity {
             // Get a random direction
             getRandomDirection(120);
         }
-
         // Check if it attacks
         if (attacking == false) {
             checkAttackOrNot(30, gp.tileSize * 4, gp.tileSize);

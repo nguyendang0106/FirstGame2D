@@ -52,10 +52,13 @@ public class NPC_BigRock extends Entity{
 		dialogues[0][0] = "It's a giant rock.";
 
 	}
+	@Override
 	public void setAction() {
 	}
+	@Override
 	public void update() {
 	}
+	@Override
 	public void speak() {
 		
 		//Do this character specific stuff
@@ -69,6 +72,7 @@ public class NPC_BigRock extends Entity{
 			dialogueSet--;
 		}
 	}
+	@Override
 	public void move(String d) {
 		
 		this.direction = d;
@@ -77,12 +81,11 @@ public class NPC_BigRock extends Entity{
 		
 		if(collisionOn == false) {
 			
-			switch(direction) {
-			case "up": worldY -= speed; break;
-			case "down": worldY += speed; break;
-			case "left": worldX -= speed; break;
-			case "right": worldX += speed; break;
-
+			switch (direction) {
+				case "up" -> worldY -= speed;
+				case "down" -> worldY += speed;
+				case "left" -> worldX -= speed;
+				case "right" -> worldX += speed;
 			}
 		}
 		detectPlate();
@@ -97,11 +100,10 @@ public class NPC_BigRock extends Entity{
 			
 			if(gp.iTile[gp.currentMap][i] != null &&
 					gp.iTile[gp.currentMap][i].name != null &&
-					gp.iTile[gp.currentMap][i].name.equals(IT_MetalPlate.itName)) {
+					gp.iTile[gp.currentMap][i].name.equals(IT_MetalPlate.IT_NAME)) {
 				plateList.add(gp.iTile[gp.currentMap][i]);
 			}
 		}
-		
 		// Create a rock list
 		for(int i = 0; i < gp.npc[1].length; i++) {
 			
@@ -115,13 +117,10 @@ public class NPC_BigRock extends Entity{
 		
 		// Scan the plate list
 		for(int i = 0; i < plateList.size(); i++) {
-			
 			int xDistance = Math.abs(worldX - plateList.get(i).worldX);
 			int yDistance = Math.abs(worldY - plateList.get(i).worldY);
 			int distance = Math.max(xDistance, yDistance);
-			
 			if(distance < 8) {
-				
 				if(linkedEntity == null) {
 					linkedEntity = plateList.get(i);
 					gp.playSE(3);
@@ -133,23 +132,17 @@ public class NPC_BigRock extends Entity{
 				}
 			}
 		}
-		
 		// Scan the rock list
 		for(int i = 0; i < rockList.size(); i++) {
-			
 			// Count the rock on the plate
 			if(rockList.get(i).linkedEntity != null) {
 				count++;
 			}
 		}
-		
 		// If all the rocks are on the plates, the iron door opens
 		if(count == rockList.size()) {
-			
 			for(int i = 0; i < gp.obj[1].length; i++) {
-				
 				if(gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].name.equals(OBJ_Door_Iron.objName)) {
-					
 					gp.obj[gp.currentMap][i] = null;
 					gp.playSE(21);
 				}

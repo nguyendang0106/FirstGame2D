@@ -7,8 +7,6 @@ import java.awt.image.BufferedImage;
 import main.GamePanel;
 
 public class Map extends TileManager{
-	
-	GamePanel gp;
 	BufferedImage worldMap[];
 	public boolean miniMapOn = false;
 
@@ -67,7 +65,6 @@ public class Map extends TileManager{
 		g2.setColor(Color.white);
 		g2.drawString("Press M To Close", 750, 550);
 	}
-
 	public void drawMiniMap(Graphics2D g2) {
 		if (miniMapOn == true) {
 			// Draw Map

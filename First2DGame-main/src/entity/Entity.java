@@ -8,9 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-
 import javax.imageio.ImageIO;
-
 import main.GamePanel;
 import main.UtilityTool;
 
@@ -354,7 +352,6 @@ public class Entity {
 					 case "right": worldX += speed; break;
 					 }
 				}
-				
 				spriteCounter++;
 				if(spriteCounter > 24) {
 					if(spriteNum == 1) {
@@ -393,26 +390,26 @@ public class Entity {
 		int yDis = getYdistance(gp.player);
 
 		switch(direction) {
-		case "up":
+		case "up" -> {
 			if(gp.player.getCenterY() < getCenterY() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
-		case "down":
+		}
+		case "down" -> {
 			if(gp.player.getCenterY() > getCenterY() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
-		case "left":
+		}
+		case "left" -> {
 			if(gp.player.getCenterX() < getCenterX() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
-		case "right":
+		}
+		case "right" -> {
 			if(gp.player.getCenterX() > getCenterX() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
+		}
 		}
 		
 		if(targetInRange == true) {
@@ -508,10 +505,10 @@ public class Entity {
 		String oppositeDirection = "";
 		
 		switch(direction) {
-		case "up": oppositeDirection = "down"; break;
-		case "down": oppositeDirection = "up"; break;
-		case "left": oppositeDirection = "right"; break;
-		case "right": oppositeDirection = "left"; break;
+		case "up" -> oppositeDirection = "down";
+		case "down" -> oppositeDirection = "up";
+		case "left" -> oppositeDirection = "right";
+		case "right" -> oppositeDirection = "left";
 		}
 		return oppositeDirection;
 	}
@@ -829,11 +826,11 @@ public class Entity {
 		int nextWorldX = user.getLeftX();
 		int nextWorldY = user.getTopY();
 		
-		switch(user.direction) {
-		case "up": nextWorldY = user.getTopY() - gp.player.speed; break;
-		case "down": nextWorldY = user.getBottomY() + gp.player.speed;; break;
-		case "left": nextWorldX = user.getLeftX() - gp.player.speed;; break;
-		case "right": nextWorldX = user.getRightX() + gp.player.speed;; break;
+		switch (user.direction) {
+			case "up" -> nextWorldY = user.getTopY() - gp.player.speed;
+			case "down" -> nextWorldY = user.getBottomY() + gp.player.speed;
+			case "left" -> nextWorldX = user.getLeftX() - gp.player.speed;
+			case "right" -> nextWorldX = user.getRightX() + gp.player.speed;
 		}
 		int col = nextWorldX/gp.tileSize;
 		int row = nextWorldY/gp.tileSize;
