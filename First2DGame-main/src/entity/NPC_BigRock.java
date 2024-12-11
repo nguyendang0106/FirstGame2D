@@ -100,11 +100,10 @@ public class NPC_BigRock extends Entity{
 			
 			if(gp.iTile[gp.currentMap][i] != null &&
 					gp.iTile[gp.currentMap][i].name != null &&
-					gp.iTile[gp.currentMap][i].name.equals(IT_MetalPlate.itName)) {
+					gp.iTile[gp.currentMap][i].name.equals(IT_MetalPlate.IT_NAME)) {
 				plateList.add(gp.iTile[gp.currentMap][i]);
 			}
 		}
-		
 		// Create a rock list
 		for(int i = 0; i < gp.npc[1].length; i++) {
 			
@@ -133,7 +132,6 @@ public class NPC_BigRock extends Entity{
 				}
 			}
 		}
-		
 		// Scan the rock list
 		for(int i = 0; i < rockList.size(); i++) {
 			// Count the rock on the plate

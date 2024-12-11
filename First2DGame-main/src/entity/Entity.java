@@ -390,26 +390,26 @@ public class Entity {
 		int yDis = getYdistance(gp.player);
 
 		switch(direction) {
-		case "up":
+		case "up" -> {
 			if(gp.player.getCenterY() < getCenterY() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
-		case "down":
+		}
+		case "down" -> {
 			if(gp.player.getCenterY() > getCenterY() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
-		case "left":
+		}
+		case "left" -> {
 			if(gp.player.getCenterX() < getCenterX() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
-		case "right":
+		}
+		case "right" -> {
 			if(gp.player.getCenterX() > getCenterX() && yDis < straight && xDis < horizontal) {
 				targetInRange = true;
 			}
-			break;
+		}
 		}
 		
 		if(targetInRange == true) {
@@ -505,10 +505,10 @@ public class Entity {
 		String oppositeDirection = "";
 		
 		switch(direction) {
-		case "up": oppositeDirection = "down"; break;
-		case "down": oppositeDirection = "up"; break;
-		case "left": oppositeDirection = "right"; break;
-		case "right": oppositeDirection = "left"; break;
+		case "up" -> oppositeDirection = "down";
+		case "down" -> oppositeDirection = "up";
+		case "left" -> oppositeDirection = "right";
+		case "right" -> oppositeDirection = "left";
 		}
 		return oppositeDirection;
 	}

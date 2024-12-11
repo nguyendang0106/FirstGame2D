@@ -71,7 +71,7 @@ public class AssetSetter {
 	public void setInteractiveTile() {
 		Map<Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map
 		
-		InputStream is = getClass().getResourceAsStream("/maps/ITobject.txt");
+		InputStream is = getClass().getResourceAsStream("/maps/nIT.txt");
 		if (is == null) {
 			System.err.println("Could not find ITobject.txt file");
 			return;
@@ -81,7 +81,7 @@ public class AssetSetter {
 		
 		try {
 			while ((line = reader.readLine()) != null) {
-				// System.out.println(line);
+				System.out.println(line);
 				String[] parts = line.split(" ");
 				if (parts.length == 4) {
 					int mapNum = Integer.parseInt(parts[0]); 

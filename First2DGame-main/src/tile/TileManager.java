@@ -59,7 +59,7 @@ public class TileManager {
 			System.out.println("Exception!");
 		}
 		// LOAD THE MAP
-		loadMap("/maps/oasis.txt", 0);
+		loadMap("/maps/0.txt", 0);
 		loadMap("/maps/land.txt", 1);
 		loadMap("/maps/maze.txt", 2);
 	}
