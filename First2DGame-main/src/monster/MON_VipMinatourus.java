@@ -92,7 +92,7 @@ public class MON_VipMinatourus extends Entity {
             checkStartChasingOrNot(gp.player, 5, 100);
 
             // Get a random direction
-            getRandomDirection(120);
+            getRandomDirection(200);
         }
 
         // Check if it attacks

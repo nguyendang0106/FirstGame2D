@@ -128,11 +128,11 @@ public class Lighting {
 	}
 	public void draw(Graphics2D g2) {
 		
-		if(gp.currentArea == gp.oasis|| gp.currentArea == gp.land) {
+		if(gp.currentArea == gp.oasis1 || gp.currentArea == gp.oasis2 || gp.currentArea == gp.land1 || gp.currentArea == gp.land2) {
 			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, filterAlpha));
 
 		}
-		if(gp.currentArea == gp.oasis || gp.currentArea == gp.land || gp.currentArea == gp.maze) {
+		if(gp.currentArea == gp.oasis1 || gp.currentArea == gp.oasis2 || gp.currentArea == gp.land1 || gp.currentArea == gp.land2 || gp.currentArea == gp.maze1 || gp.currentArea == gp.maze2) {
 			g2.drawImage(darknessFilter, 0, 0, null);
 		}
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));

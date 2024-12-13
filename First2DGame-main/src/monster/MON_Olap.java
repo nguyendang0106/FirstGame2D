@@ -28,6 +28,7 @@ public class MON_Olap extends Entity {
         defense = 2;
         exp = 10;
         knockBackPower = 5;
+        projectile = new OBJ_Rock(gp);
 
         solidArea.x = 4;
         solidArea.y = 4;
@@ -84,7 +85,7 @@ public class MON_Olap extends Entity {
             checkStartChasingOrNot(gp.player, 5, 100);
 
             // Get a random direction
-            getRandomDirection(120);
+            getRandomDirection(200);
         }
 
         // Check if it attacks

@@ -88,10 +88,14 @@ public class GamePanel extends JPanel implements Runnable{
 	// AREA
 	public int currentArea;
 	public int nextArea;
-	public final int oasis = 50;
-	public final int land = 51;
-	public final int maze = 52;
-	// public final int indoor = 53;
+	public final int oasis1 = 49;
+	public final int oasis2 = 50;
+	public final int land1 = 51;
+	public final int land2 = 52;
+	public final int maze1 = 53;
+	public final int maze2 = 54;
+
+	public final int indoor = 60;
 
 
 	public GamePanel() {
@@ -110,7 +114,7 @@ public class GamePanel extends JPanel implements Runnable{
 //		playMusic(0);
 //		stopMusic();
 		gameState = titleState;
-		currentArea = oasis;
+		currentArea = oasis1;
 	
 		tempScreen = new BufferedImage(screenWidth, screenHeight, BufferedImage.TYPE_INT_ARGB_PRE);
 		g2 = (Graphics2D)tempScreen.getGraphics();
@@ -121,7 +125,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	public void resetGame(boolean restart) {
 		stopMusic();
-		currentArea = oasis;
+		currentArea = oasis1;
 		removeTempEntity();	
 		bossBattleOn = false;
 		player.setDefaultPositions();
@@ -354,15 +358,15 @@ public class GamePanel extends JPanel implements Runnable{
 	public void changeArea() {
 		if(nextArea != currentArea) {
 			stopMusic();
-			if(nextArea == oasis) {
+			if(nextArea == oasis1 || nextArea == oasis2) {
 				playMusic(0);
 			}
-			if(nextArea == land 
-			// || nextArea == indoor
+			if(nextArea == land1 || nextArea == land2 
+			|| nextArea == indoor
 			) {
 				playMusic(18);
 			}
-			if(nextArea == maze) {
+			if(nextArea == maze1 || nextArea == maze2) {
 				playMusic(19);
 			}
 			aSetter.setNPC();

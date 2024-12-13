@@ -102,7 +102,7 @@ public class EnvironmentManager {
     public void draw(Graphics2D g2) {
         lighting.draw(g2);
 
-        if(gp.currentMap == 0) {
+        if(gp.currentMap == 0 || gp.currentMap == 1) {
             g2.setColor(new Color(255, 255, 255, 180));
             for(Particle p : particles) {
                 int screenX = (int)(p.x - gp.player.worldX + gp.player.screenX);
@@ -114,7 +114,7 @@ public class EnvironmentManager {
                 }
             }
         }
-        else if(gp.currentMap == 1) {
+        else if(gp.currentMap == 2 || gp.currentMap == 3) {
             g2.setColor(new Color(130, 170, 255, 150));
             for(Particle p : particles) {
                 int screenX = (int)(p.x - gp.player.worldX + gp.player.screenX);

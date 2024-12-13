@@ -20,7 +20,7 @@ public class MON_Bat extends Entity{
 		
 		type  = type_monster;
 		name = "Bat";
-		defaultSpeed = 3;
+		defaultSpeed = 4;
 		speed = defaultSpeed;
 		maxLife = 7;
 		life = maxLife;
@@ -70,7 +70,7 @@ public class MON_Bat extends Entity{
 //			checkStartChasingOrNot(gp.player, 5, 100);
 			
 			// Get a random direction
-			getRandomDirection(10);
+			getRandomDirection(30);
 		}	
 	}
 	public void damageReaction() {
