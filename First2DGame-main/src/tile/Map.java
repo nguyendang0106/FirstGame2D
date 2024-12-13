@@ -69,14 +69,14 @@ public class Map extends TileManager{
 		if (miniMapOn == true) {
 			// Draw Map
 			int width = 150;
-			int height = 150;
+			int height = 75;
 			double scale = (double)(gp.tileSize * 150) / width;
 			int x = gp.screenWidth - width - 50;
 			int y = 50;
 			int mapPortionX =(int)(5*scale); // Starting x-coordinate of the portion
 			int mapPortionY =(int)(5*scale); // Starting y-coordinate of the portion
 			int mapPortionWidth =(int)(100*scale); // Width of the portion
-			int mapPortionHeight = (int)(100*scale); // Height of the portion
+			int mapPortionHeight = (int)(50*scale); // Height of the portion
 			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 			g2.drawImage(worldMap[gp.currentMap], x, y, x + width, y + height, mapPortionX, mapPortionY, mapPortionX + mapPortionWidth, mapPortionY + mapPortionHeight, null);
 			// Draw Player

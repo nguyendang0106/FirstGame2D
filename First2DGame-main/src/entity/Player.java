@@ -48,14 +48,14 @@ public class Player extends Entity {
 	}
 
 	public void setDefaultValues() {
-		worldX = gp.tileSize * 75;
+		worldX = gp.tileSize * 55;
 		worldY = gp.tileSize * 15;
 		defaultSpeed = 4;
 		speed = defaultSpeed;
 		direction = "down";
 		// PLAYER STATUS
 		level = 1;
-		maxLife = 6;
+		maxLife = 20;
 		life = maxLife;
 		maxMana = 4;
 		mana = maxMana;
@@ -81,7 +81,7 @@ public class Player extends Entity {
 
 	public void setDefaultPositions() {
 		gp.currentMap = 0;
-		worldX = gp.tileSize * 75;
+		worldX = gp.tileSize * 25;
 		worldY = gp.tileSize * 15;
 		direction = "down";
 	}

@@ -1,10 +1,8 @@
 package monster;
 
-import entity.Entity;
-import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
+
+import entity.Entity;
 import main.GamePanel;
 import object.OBJ_Coin_Bronze;
 import object.OBJ_Heart;
@@ -38,42 +36,22 @@ public class MON_RedSlime extends Entity{
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		
-		loadImages();
+		getImage();
 
 	}
+	public void getImage() {
+		
+		up1 = setup("/monster/redslime_down_1", gp.tileSize, gp.tileSize);
+		up2 = setup("/monster/redslime_down_2", gp.tileSize, gp.tileSize);
+		down1 = setup("/monster/redslime_down_1", gp.tileSize, gp.tileSize);
+		down2 = setup("/monster/redslime_down_2", gp.tileSize, gp.tileSize);
+		left1 = setup("/monster/redslime_down_1", gp.tileSize, gp.tileSize);
+		left2 = setup("/monster/redslime_down_2", gp.tileSize, gp.tileSize);
+		right1 = setup("/monster/redslime_down_1", gp.tileSize, gp.tileSize);
+		right2 = setup("/monster/redslime_down_2", gp.tileSize, gp.tileSize);
 
-    private static final Map<String, BufferedImage> imageCache = new HashMap<>();
-    private synchronized void loadImages() {
-        if (imageCache.isEmpty()) {
-            // Walking animations
-            cacheImage("down1", "/monster/redslime_down_1");
-            cacheImage("down2", "/monster/redslime_down_2");
-        }
-        
-        assignCachedImages();
-    }
-    
-    private void cacheImage(String key, String path) {
-        imageCache.putIfAbsent(key, setup(path, gp.tileSize, gp.tileSize));
-    }
-    
-    private void cacheImage(String key, String path, int widthMult, int heightMult) {
-        imageCache.putIfAbsent(key, setup(path, gp.tileSize * widthMult, gp.tileSize * heightMult));
-    }
-    
-    private void assignCachedImages() {
-        up1 = imageCache.get("down1");
-        up2 = imageCache.get("down2");
-        down1 = imageCache.get("down1");
-        down2 = imageCache.get("down2");
-        left1 = imageCache.get("down1");
-        left2 = imageCache.get("down2");
-        right1 = imageCache.get("down1");
-        right2 = imageCache.get("down2");
-    }
-
-
-	@Override
+	}
+	
 	public void setAction() {
 		
 		if(onPath == true) {
@@ -95,16 +73,14 @@ public class MON_RedSlime extends Entity{
 			getRandomDirection(120);
 		}	
 	}
-
-	@Override
 	public void damageReaction() {
+		
 		actionLockCounter = 0;
 //		direction = gp.player.direction;
 		onPath = true;
 	}
-
-	@Override
 	public void checkDrop() {
+		
 		// CAST A DIE
 		int i = new Random().nextInt(100) + 1;
 		

@@ -45,12 +45,17 @@ public class TileManager {
 		getTileImage();
 		
 		gp.maxWorldCol = 110;
-		gp.maxWorldRow = 110;
+		gp.maxWorldRow = 60;
 		mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
 		// LOAD THE MAP
 		loadMap("/maps/0oasis.txt", 0);
-		loadMap("/maps/1land.txt", 1);
-		loadMap("/maps/2maze.txt", 2);
+		loadMap("/maps/1oasis.txt", 1);
+		loadMap("/maps/2land.txt", 2);
+		loadMap("/maps/3land.txt", 3);
+		loadMap("/maps/4maze.txt", 4);
+		loadMap("/maps/5tw.txt", 5);
+		// loadMap("maps/6shop.txt", 6);
+
 	}
 	
 	public void getTileImage() {

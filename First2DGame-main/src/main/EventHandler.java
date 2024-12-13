@@ -62,29 +62,116 @@ public class EventHandler{
 			canTouchEvent = true;
 		}
 		if(canTouchEvent == true) {
-// 			if(hit(0,27,16,"right")) { damagePit(gp.dialogueState);}
-// //			if(hit(0,23,19,"any")) { damagePit(gp.dialogueState);}
-// //			if(hit(0,27,16,"right") == true) { teleport(gp.dialogueState);}
-// 			else if(hit(0,23,12,"up") == true) { healingPool(gp.dialogueState);}
-// 			else if(hit(0,10,39,"any") == true) {teleport2(1,12,13,gp.indoor);} // to the merchant's house
-// 			else if(hit(1,12,13,"any") == true) {teleport2(0,10,39,gp.outside);} // to outside
-// 			else if(hit(1,12,9,"up") == true) {speak(gp.npc[1][0]);}
-// 			else if(hit(0,12,9,"any") == true) {teleport2(2,9,41,gp.dungeon);} // to the dungeon
-// 			else if(hit(2,9,41,"any") == true) {teleport2(0,12,9,gp.outside);} // to outside
-// 			else if(hit(2,8,7,"any") == true) {teleport2(3,26,41,gp.dungeon);} // to B2
-// 			else if(hit(3,26,41,"any") == true) {teleport2(2,8,7,gp.dungeon);} // to B1
-// 			else if(hit(3,25,27,"any") == true) {skeletonLord();} // BOSS
+
 			//new teleport ẻvent
-			if(hit(0,40,57,"any")==true) teleport2(0, 44, 65, gp.oasis);
-			if(hit(0,44,65,"any")==true) teleport2(0, 40, 57, gp.land);
-			if(hit(0,64,86,"any")==true) teleport2(0, 82, 73, gp.land);
-			if(hit(0,82,73,"any")==true) teleport2(0, 64, 86, gp.oasis);
-			if(hit(0,96,79,"any")==true) teleport2(1, 14, 96, gp.land);
-			if(hit(1,14,96,"any")==true) teleport2(0, 96, 79, gp.oasis);
-			if(hit(1,29,90,"any")==true) teleport2(2, 8, 28, gp.maze);
-			if(hit(1,30,90,"any")==true) teleport2(2, 8, 28, gp.maze);
-			if(hit(1,29,91,"any")==true) teleport2(2, 8, 28, gp.maze);
-			if(hit(1,30,91,"any")==true) teleport2(2, 8, 28, gp.maze);
+			if(hit(0,18,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,19,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,20,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,21,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,22,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,23,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,24,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,25,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,26,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,27,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,28,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,29,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,30,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,31,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,32,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,33,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,34,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,35,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,36,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,37,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,38,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,39,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,40,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,41,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,42,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,43,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,44,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,45,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,46,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,47,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,48,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,49,55,"any") == true) teleport2(1,44,15,gp.oasis);	
+			if(hit(0,50,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,51,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,52,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,53,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,54,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(0,55,55,"any") == true) teleport2(1,44,15,gp.oasis);
+			if(hit(1,44,15,"any") == true) teleport2(0,45,55,gp.oasis);
+
+
+			if(hit(2,14,46,"any") == true) teleport2(1,13,48,gp.oasis);
+			if(hit(1,13,48,"any") == true) teleport2(2,14,46,gp.land);
+			if(hit(1,14,48,"any") == true) teleport2(2,14,46,gp.land);
+			if(hit(1,13,49,"any") == true) teleport2(2,14,46,gp.land);
+			if(hit(1,14,49,"any") == true) teleport2(2,14,46,gp.land);
+
+			if(hit(2,24,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,25,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,26,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,27,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,28,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,29,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,30,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,31,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,32,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,33,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,34,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,35,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,36,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,37,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,38,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,39,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,40,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,41,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,42,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,43,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,44,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,45,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,46,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,47,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,48,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,49,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,50,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,51,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,52,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,53,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,54,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,55,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,56,4,"any") == true) teleport2(3,33,47,gp.land);
+			if(hit(2,57,4,"any") == true) teleport2(3,33,47,gp.land);
+
+			if(hit(3,33,48,"any") == true) teleport2(2,24,4,gp.land);
+
+			if(hit(2,29,40,"any") == true) teleport2(4, 8, 3, gp.maze);
+			if(hit(2,30,41,"any") == true) teleport2(4, 8, 3, gp.maze);
+			if(hit(2,29,41,"any") == true) teleport2(4, 8, 3, gp.maze);
+			if(hit(2,30,40,"any") == true) teleport2(4, 8, 3, gp.maze);
+
+			if(hit(4,53,35,"any") == true) skeletonLord();
+			if(hit(4,53,36,"any") == true) skeletonLord();
+			if(hit(4,62,45,"any") == true) skeletonLord();
+			if(hit(4,71,45,"any") == true) skeletonLord();
+			if(hit(4,70,45,"any") == true) skeletonLord();
+
+
+			// if(hit(2,17,39,"any") == true) teleport2(6,29,40,gp.land);
+			// if(hit(6,29,40,"any") == true) teleport2(2,17,39,gp.land);
+
+			if(hit(3,93,11,"any") == true) teleport2(5,54,48,gp.land);
+			if(hit(3,92,11,"any") == true) teleport2(5,55,48,gp.land);
+			if(hit(3,93,12,"any") == true) teleport2(5,54,48,gp.land);
+			if(hit(3,92,12,"any") == true) teleport2(5,55,48,gp.land);
+
+			if(hit(5,54,49,"any") == true) teleport2(3,93,11,gp.land);
+			if(hit(5,55,49,"any") == true) teleport2(3,93,11,gp.land);
+			
+			// if(hit(5,29,40,"any") == true) teleport2(3,93,11,gp.land);
 		}
 	}
 	public boolean hit(int map, int col, int row, String reqDirection) {
