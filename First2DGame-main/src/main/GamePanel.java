@@ -91,6 +91,8 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int oasis = 50;
 	public final int land = 51;
 	public final int maze = 52;
+	// public final int indoor = 53;
+
 
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
@@ -355,7 +357,9 @@ public class GamePanel extends JPanel implements Runnable{
 			if(nextArea == oasis) {
 				playMusic(0);
 			}
-			if(nextArea == land) {
+			if(nextArea == land 
+			// || nextArea == indoor
+			) {
 				playMusic(18);
 			}
 			if(nextArea == maze) {
