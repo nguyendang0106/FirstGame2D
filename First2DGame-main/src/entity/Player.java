@@ -55,7 +55,7 @@ public class Player extends Entity {
 		direction = "down";
 		// PLAYER STATUS
 		level = 1;
-		maxLife = 20;
+		maxLife = 6;
 		life = maxLife;
 		maxMana = 4;
 		mana = maxMana;
@@ -109,6 +109,13 @@ public class Player extends Entity {
 		inventory.add(currentShield);
 		inventory.add(new OBJ_Key(gp));
 		inventory.add(new OBJ_Axe(gp));
+		inventory.add(new OBJ_Lantern(gp));
+		inventory.add(new OBJ_Pickaxe(gp));
+		inventory.add(new OBJ_Potion_Blue(gp));
+		inventory.add(new OBJ_Potion_Red(gp));
+		inventory.add(new OBJ_Shield_Blue(gp));
+		inventory.add(new OBJ_Sword_Normal(gp));
+		inventory.add(new OBJ_Tent(gp));
 	}
 
 	public int getAttack() {
