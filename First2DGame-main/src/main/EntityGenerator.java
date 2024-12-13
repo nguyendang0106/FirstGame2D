@@ -10,6 +10,7 @@ public class EntityGenerator {
 	public EntityGenerator(GamePanel gp) {
 		this.gp = gp;
 	}
+
 	public Entity getObject(String itemName) {
 
 		Entity obj = null;
@@ -33,6 +34,10 @@ public class EntityGenerator {
 			case OBJ_Shield_Blue.objName -> new OBJ_Shield_Blue(gp);
 			case OBJ_Shield_Wood.objName -> new OBJ_Shield_Wood(gp);
 			case OBJ_Sword_Normal.objName -> new OBJ_Sword_Normal(gp);
+
+			case OBJ_SuperSword.objName -> new OBJ_SuperSword(gp);
+
+			case OBJ_MegaSuperSword.objName -> new OBJ_MegaSuperSword(gp);
 			case OBJ_Tent.objName -> new OBJ_Tent(gp);
 			default -> null;
 		};
