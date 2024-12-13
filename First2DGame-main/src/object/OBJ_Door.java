@@ -7,10 +7,8 @@ public class OBJ_Door extends Entity{
 	
 	GamePanel gp;
 	public static final String objName = "Door";
-
 	
 	public OBJ_Door(GamePanel gp) {
-		
 		super(gp);
 		this.gp = gp;
 		
@@ -29,11 +27,9 @@ public class OBJ_Door extends Entity{
 		setDialogue();
 	}
 	public void setDialogue() {
-		
 		dialogues[0][0] = "You need a key to open this.";
 	}
 	public void interact() {
-		
 		startDialogue(this,0);
 	}
 

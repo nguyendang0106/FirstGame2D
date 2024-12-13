@@ -27,38 +27,45 @@ public class CollisionChecker {
     public void checkTile(Entity entity) {
         String direction = getEffectiveDirection(entity);
         int entityLeftWorldX = entity.worldX + entity.solidArea.x;
-        int entityRightWorldX = entityLeftWorldX + entity.solidArea.width;
+        int entityRightWorldX = entity.worldX + entity.solidArea.x + entity.solidArea.width;
         int entityTopWorldY = entity.worldY + entity.solidArea.y;
-        int entityBottomWorldY = entityTopWorldY + entity.solidArea.height;
-        
-        int entityLeftCol = entityLeftWorldX / gp.tileSize;
-        int entityRightCol = entityRightWorldX / gp.tileSize;
-        int entityTopRow = entityTopWorldY / gp.tileSize;
-        int entityBottomRow = entityBottomWorldY / gp.tileSize;
-        
+        int entityBottomWorldY = entity.worldY + entity.solidArea.y + entity.solidArea.height;
+    
+        // Calculate initial positions
+        int entityLeftCol = Math.min(entityLeftWorldX / gp.tileSize, gp.maxWorldCol - 1);
+        int entityRightCol = Math.min(entityRightWorldX / gp.tileSize, gp.maxWorldCol - 1);
+        int entityTopRow = Math.min(entityTopWorldY / gp.tileSize, gp.maxWorldRow - 1);
+        int entityBottomRow = Math.min(entityBottomWorldY / gp.tileSize, gp.maxWorldRow - 1);
+    
+        // Ensure indices are within bounds
+        entityLeftCol = Math.max(0, entityLeftCol);
+        entityRightCol = Math.max(0, entityRightCol);
+        entityTopRow = Math.max(0, entityTopRow);
+        entityBottomRow = Math.max(0, entityBottomRow);
+    
         int tileNum1, tileNum2;
-        
+    
         switch(direction) {
             case "up" -> {
-                entityTopRow = (entityTopWorldY - entity.speed) / gp.tileSize;
+                entityTopRow = Math.max(0, Math.min((entityTopWorldY - entity.speed) / gp.tileSize, gp.maxWorldRow - 1));
                 tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityTopRow];
                 entity.collisionOn = gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision;
             }
             case "down" -> {
-                entityBottomRow = (entityBottomWorldY + entity.speed) / gp.tileSize;
+                entityBottomRow = Math.max(0, Math.min((entityBottomWorldY + entity.speed) / gp.tileSize, gp.maxWorldRow - 1));
                 tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityBottomRow];
                 tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityBottomRow];
                 entity.collisionOn = gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision;
             }
             case "left" -> {
-                entityLeftCol = (entityLeftWorldX - entity.speed) / gp.tileSize;
+                entityLeftCol = Math.max(0, Math.min((entityLeftWorldX - entity.speed) / gp.tileSize, gp.maxWorldCol - 1));
                 tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityLeftCol][entityBottomRow];
                 entity.collisionOn = gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision;
             }
             case "right" -> {
-                entityRightCol = (entityRightWorldX + entity.speed) / gp.tileSize;
+                entityRightCol = Math.max(0, Math.min((entityRightWorldX + entity.speed) / gp.tileSize, gp.maxWorldCol - 1));
                 tileNum1 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityTopRow];
                 tileNum2 = gp.tileM.mapTileNum[gp.currentMap][entityRightCol][entityBottomRow];
                 entity.collisionOn = gp.tileM.tile[tileNum1].collision || gp.tileM.tile[tileNum2].collision;

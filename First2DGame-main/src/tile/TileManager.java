@@ -23,7 +23,7 @@ public class TileManager {
 	
 	public TileManager(GamePanel gp) {
 		this.gp = gp;
-		InputStream is = getClass().getResourceAsStream("/maps/newtilesdata.txt");
+		InputStream is = getClass().getResourceAsStream("/maps/data.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(is));
 		
 		// GETTING TILE NAMES AND COLLISION INFO FROM THE FILE
@@ -44,42 +44,23 @@ public class TileManager {
 		tile = new Tile[fileNames.size()];
 		getTileImage();
 		
-		// GET THE maxWorldCol & Row
-		is = getClass().getResourceAsStream("/maps/land.txt");
-		br = new BufferedReader(new InputStreamReader(is));
-		
-		try {
-			// String line2 = br.readLine();
-			// String maxTile[] = line2.split(" ");
-			gp.maxWorldCol = 150;
-			gp.maxWorldRow = 120;
-			mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
-			br.close();
-		}catch(IOException e) {
-			System.out.println("Exception!");
-		}
+		gp.maxWorldCol = 110;
+		gp.maxWorldRow = 110;
+		mapTileNum = new int[gp.maxMap][gp.maxWorldCol][gp.maxWorldRow];
 		// LOAD THE MAP
-		loadMap("/maps/0.txt", 0);
-		loadMap("/maps/land.txt", 1);
-		loadMap("/maps/maze.txt", 2);
+		loadMap("/maps/0oasis.txt", 0);
+		loadMap("/maps/1land.txt", 1);
+		loadMap("/maps/2maze.txt", 2);
 	}
 	
 	public void getTileImage() {
-		
 		for(int i = 0; i < fileNames.size(); i++) {
 			String fileName;
 			boolean collision;
-			
 			// Get a file name
 			fileName = fileNames.get(i);
-			
 			// Get a collision status
-			if(collisionStatus.get(i).equals("false")) {
-				collision = true;
-			}
-			else {
-				collision = false;
-			}
+			collision = !collisionStatus.get(i).equals("true");
 			
 			setup(i, fileName, collision);
 		}

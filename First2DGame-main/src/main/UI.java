@@ -1,5 +1,6 @@
 package main;
 
+import entity.Entity;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -10,11 +11,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-
-import entity.Entity;
-import object.OBJ_ManaCrystal;
 import object.OBJ_Coin_Bronze;
 import object.OBJ_Heart;
+import object.OBJ_ManaCrystal;
 
 public class UI {
 	
@@ -775,11 +774,10 @@ public class UI {
 		drawSubWindow(frameX, frameY, frameWidth, frameHeight);
 		
 		switch(subState) {
-		case 0: options_top(frameX,frameY); break;
-		case 1: options_fullScreenNotification(frameX, frameY); break;
-		case 2: options_control(frameX, frameY); break;
-		case 3: options_endGameConfirmation(frameX, frameY); break;
-
+			case 0 : options_top(frameX,frameY); break;
+			case 1 : options_fullScreenNotification(frameX, frameY); break;
+			case 2 : options_control(frameX, frameY); break;
+			case 3 : options_endGameConfirmation(frameX, frameY); break;
 		}
 		
 		gp.keyH.enterPressed = false;

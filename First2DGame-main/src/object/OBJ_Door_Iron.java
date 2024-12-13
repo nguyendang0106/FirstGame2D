@@ -7,7 +7,6 @@ public class OBJ_Door_Iron extends Entity{
 
 	GamePanel gp;
 	public static final String objName = "Iron Door";
-
 	
 	public OBJ_Door_Iron(GamePanel gp) {
 		
@@ -29,11 +28,9 @@ public class OBJ_Door_Iron extends Entity{
 		setDialogue();
 	}
 	public void setDialogue() {
-		
 		dialogues[0][0] = "It won't budge.";
 	}
 	public void interact() {
-		
 		startDialogue(this,0);
 	}
 }

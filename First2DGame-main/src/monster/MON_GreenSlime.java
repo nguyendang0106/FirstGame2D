@@ -1,6 +1,9 @@
 package monster;
 
 import entity.Entity;
+import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
 import main.GamePanel;
 import object.OBJ_ManaCrystal;
 import object.OBJ_Rock;
@@ -31,23 +34,40 @@ public class MON_GreenSlime extends Entity {
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 
-		getImage();
+		loadImages();
 
 	}
 
-	public void getImage() {
+    private static final Map<String, BufferedImage> imageCache = new HashMap<>();
+	private synchronized void loadImages() {
+        if (imageCache.isEmpty()) {
+            // Walking animations
+            cacheImage("down1", "/monster/greenslime_down_1");
+            cacheImage("down2", "/monster/greenslime_down_2");
+        }
+        assignCachedImages();
+    }
+    
+    private void cacheImage(String key, String path) {
+        imageCache.putIfAbsent(key, setup(path, gp.tileSize, gp.tileSize));
+    }
+    
+    private void cacheImage(String key, String path, int widthMult, int heightMult) {
+        imageCache.putIfAbsent(key, setup(path, gp.tileSize * widthMult, gp.tileSize * heightMult));
+    }
+    
+    private void assignCachedImages() {
+        up1 = imageCache.get("down1");
+        up2 = imageCache.get("down2");
+        down1 = imageCache.get("down1");
+        down2 = imageCache.get("down2");
+        left1 = imageCache.get("down1");
+        left2 = imageCache.get("down2");
+        right1 = imageCache.get("down1");
+        right2 = imageCache.get("down2");
+    }
 
-		up1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		up2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-		down1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		down2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-		left1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		left2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-		right1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		right2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-
-	}
-
+	@Override
 	public void setAction() {
 
 		if (onPath == true) {
@@ -69,6 +89,7 @@ public class MON_GreenSlime extends Entity {
 		}
 	}
 
+	@Override
 	public void damageReaction() {
 
 		actionLockCounter = 0;
@@ -76,6 +97,7 @@ public class MON_GreenSlime extends Entity {
 		onPath = true;
 	}
 
+	@Override
 	public void checkDrop() {
 
 		// CAST A DIE

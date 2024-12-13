@@ -42,8 +42,8 @@ public class CutsceneManager {
 		this.g2 = g2;
 		
 		switch(sceneNum) {
-		case skeletonLord: scene_skeletonLord(); break;	
-		case ending: scene_ending(); break;	
+			case skeletonLord -> scene_skeletonLord();
+			case ending -> scene_ending();
 		}
 	}
 	public void scene_skeletonLord() {

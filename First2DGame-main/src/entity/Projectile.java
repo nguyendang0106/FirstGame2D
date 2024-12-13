@@ -47,8 +47,6 @@ public class Projectile extends Entity{
 
 		}
 		
-		
-		
 		life--;
 		if(life <= 0) {
 			alive = false;

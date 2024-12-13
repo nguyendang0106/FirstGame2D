@@ -1,5 +1,8 @@
 package main;
 
+import entity.NPC_BigRock;
+import entity.NPC_First;
+import entity.NPC_Merchant;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,6 +10,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 import monster.*;
+import object.*;
 import tile_interactive.*;
 
 public class AssetSetter {
@@ -15,9 +19,83 @@ public class AssetSetter {
 		this.gp = gp;
 	}
 	public void setObject() {
+		Map<Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map
+		InputStream is = getClass().getResourceAsStream("/maps/object.txt");
+		if (is == null) {
+			System.err.println("Could not find object.txt file");
+			return;
+		}
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		String line;
+		try {
+			while ((line = reader.readLine()) != null) {
+				String[] parts = line.split(" ");
+				if (parts.length == 4) {
+					int mapNum = Integer.parseInt(parts[0]);
+					int type = Integer.parseInt(parts[1]);
+					int y = Integer.parseInt(parts[2]);
+					int x = Integer.parseInt(parts[3]);
+					// Get or initialize index for this map
+					int index = mapIndices.getOrDefault(mapNum, 0);
+					switch (type) {
+						case 1 -> gp.obj[mapNum][index] = new OBJ_Door_Iron(gp);
+						
+					}
+					gp.obj[mapNum][index].worldX = gp.tileSize * x;
+					gp.obj[mapNum][index].worldY = gp.tileSize * y;
+					mapIndices.put(mapNum, index + 1);
+				} 
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading object.txt: " + e.getMessage());
+		} finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				System.err.println("Error closing reader: " + e.getMessage());
+			}
+		}
 
 	}
 	public void setNPC() {
+		Map<Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map
+		InputStream is = getClass().getResourceAsStream("/maps/npc.txt");
+		if (is == null) {
+			System.err.println("Could not find npc.txt file");
+			return;
+		}
+		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+		String line;
+		try {
+			while ((line = reader.readLine()) != null) {
+				String[] parts = line.split(" ");
+				if (parts.length == 4) {
+					int mapNum = Integer.parseInt(parts[0]);
+					int type = Integer.parseInt(parts[1]);
+					int y = Integer.parseInt(parts[2]);
+					int x = Integer.parseInt(parts[3]);
+					// Get or initialize index for this map
+					int index = mapIndices.getOrDefault(mapNum, 0);
+					switch (type) {
+						case 1 -> gp.npc[mapNum][index] = new NPC_First(gp);
+						case 2 -> gp.npc[mapNum][index] = new NPC_BigRock(gp);
+						case 3 -> gp.npc[mapNum][index] = new NPC_Merchant(gp);
+					}
+					gp.npc[mapNum][index].worldX = gp.tileSize * x;
+					gp.npc[mapNum][index].worldY = gp.tileSize * y;
+					// Increment and store the index for this map
+					mapIndices.put(mapNum, index + 1);
+				}
+			}
+		} catch (IOException e) {
+			System.err.println("Error reading npc.txt: " + e.getMessage());
+		} finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				System.err.println("Error closing reader: " + e.getMessage());
+			}
+		}
 	}
 	public void setMonster() {
 		Map <Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map
@@ -49,6 +127,10 @@ public class AssetSetter {
 						case 8 -> gp.monster[mapNum][index] = new MON_TuanLoc(gp);
 						case 9 -> gp.monster[mapNum][index] = new MON_Minatourus(gp);
 						case 10 -> gp.monster[mapNum][index] = new MON_VipMinatourus(gp);
+						case 11 -> gp.monster[mapNum][index] = new MON_Bat(gp);
+						case 12 -> gp.monster[mapNum][index] = new MON_Ghost(gp);
+						case 13 -> gp.monster[mapNum][index] = new MON_Xacuop(gp);
+						case 14 -> gp.monster[mapNum][index] = new MON_SkeletonLord(gp);
 					}
 					gp.monster[mapNum][index].worldX = gp.tileSize * x;
 					gp.monster[mapNum][index].worldY = gp.tileSize * y;
@@ -71,31 +153,30 @@ public class AssetSetter {
 	public void setInteractiveTile() {
 		Map<Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map
 		
-		InputStream is = getClass().getResourceAsStream("/maps/nIT.txt");
+		InputStream is = getClass().getResourceAsStream("/maps/ITobject.txt");
 		if (is == null) {
 			System.err.println("Could not find ITobject.txt file");
 			return;
 		}
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		String line;
-		
 		try {
 			while ((line = reader.readLine()) != null) {
-				System.out.println(line);
 				String[] parts = line.split(" ");
 				if (parts.length == 4) {
 					int mapNum = Integer.parseInt(parts[0]); 
 					int type = Integer.parseInt(parts[1]);
 					int x = Integer.parseInt(parts[2]);
 					int y = Integer.parseInt(parts[3]);
-					
-					// Get or initialize index for this map
 					int index = mapIndices.getOrDefault(mapNum, 0);
-					
-					if (type == 704 || type == 731 || type == 758 || 
-						type == 812 || type == 839 || type == 785) {
-						gp.iTile[mapNum][index] = new IT_Trunk(gp, y, x, type);
-					} else {
+					// Get or initialize index for this map
+					if(type == 1){
+						gp.iTile[mapNum][index] = new IT_MetalPlate(gp, y, x);
+						// Increment and store the index for this map
+						mapIndices.put(mapNum, index + 1);
+						continue;
+					}
+					else{
 						gp.iTile[mapNum][index] = new IT_tree(gp, y, x, type);
 					}
 					// Increment and store the index for this map

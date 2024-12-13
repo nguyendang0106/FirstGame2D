@@ -137,13 +137,13 @@ public class Lighting {
 		}
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 		// DEBUG
-		String situation = "";
-		switch(dayState) {
-		case day: situation = "Day"; break;
-		case dusk: situation = "Dusk"; break;
-		case night: situation = "Night"; break;
-		case dawn: situation = "Dawn"; break;
-		}
+		String situation = switch(dayState) {
+			case day -> "Day";
+			case dusk -> "Dusk";
+			case night -> "Night";
+			case dawn -> "Dawn";
+			default -> "";
+		};
 		g2.setColor(Color.white);
 		g2.setFont(gp.ui.maruMonica.deriveFont(50f));
 //		g2.setFont(g2.getFont().deriveFont(50f));

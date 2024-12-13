@@ -1,13 +1,14 @@
 package monster;
 
-import java.util.Random;
-
 import entity.Entity;
+import java.awt.image.BufferedImage;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 import main.GamePanel;
 import object.OBJ_Coin_Bronze;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
-import object.OBJ_Rock;
 
 public class MON_Bat extends Entity{
 
@@ -15,9 +16,7 @@ public class MON_Bat extends Entity{
 
 	public MON_Bat(GamePanel gp) {
 		super(gp);
-		
 		this.gp = gp;
-		
 		type  = type_monster;
 		name = "Bat";
 		defaultSpeed = 4;
@@ -27,7 +26,6 @@ public class MON_Bat extends Entity{
 		attack = 7;
 		defense = 0;
 		exp = 7;
-//		projectile = new OBJ_Rock(gp);
 		
 		solidArea.x = 3;
 		solidArea.y  = 15;
@@ -35,33 +33,46 @@ public class MON_Bat extends Entity{
 		solidArea.height = 21;
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
-		
-		getImage();
-
+		loadImages();
 	}
-	public void getImage() {
-		
-		up1 = setup("/monster/bat_down_1", gp.tileSize, gp.tileSize);
-		up2 = setup("/monster/bat_down_2", gp.tileSize, gp.tileSize);
-		down1 = setup("/monster/bat_down_1", gp.tileSize, gp.tileSize);
-		down2 = setup("/monster/bat_down_2", gp.tileSize, gp.tileSize);
-		left1 = setup("/monster/bat_down_1", gp.tileSize, gp.tileSize);
-		left2 = setup("/monster/bat_down_2", gp.tileSize, gp.tileSize);
-		right1 = setup("/monster/bat_down_1", gp.tileSize, gp.tileSize);
-		right2 = setup("/monster/bat_down_2", gp.tileSize, gp.tileSize);
 
-	}
-	
+	private static final Map<String, BufferedImage> imageCache = new HashMap<>();
+	private synchronized void loadImages() {
+        if (imageCache.isEmpty()) {
+            // Walking animations
+            cacheImage("down1", "/monster/bat_down_1");
+            cacheImage("down2", "/monster/bat_down_2");
+        }
+        assignCachedImages();
+    }
+    
+    private void cacheImage(String key, String path) {
+        imageCache.putIfAbsent(key, setup(path, gp.tileSize, gp.tileSize));
+    }
+    
+    private void cacheImage(String key, String path, int widthMult, int heightMult) {
+        imageCache.putIfAbsent(key, setup(path, gp.tileSize * widthMult, gp.tileSize * heightMult));
+    }
+    
+    private void assignCachedImages() {
+        up1 = imageCache.get("down1");
+        up2 = imageCache.get("down2");
+        down1 = imageCache.get("down1");
+        down2 = imageCache.get("down2");
+        left1 = imageCache.get("down1");
+        left2 = imageCache.get("down2");
+        right1 = imageCache.get("down1");
+        right2 = imageCache.get("down2");
+    }
+
+	@Override
 	public void setAction() {
-		
-		if(onPath == true) {
-			
+		if(onPath == true) {		
 //			// Check if it stop chasing
 //			checkStopChasingOrNot(gp.player, 15, 100);
 //			
 //			// Search the direction to go
-//			searchPath(getGoalCol(gp.player), getGoalRow(gp.player));
-			
+//			searchPath(getGoalCol(gp.player), getGoalRow(gp.player));			
 //			// Check if it shoots a projectile 
 //			checkShootOrNot(200, 30);
 		}
@@ -73,17 +84,16 @@ public class MON_Bat extends Entity{
 			getRandomDirection(10);
 		}	
 	}
+	@Override
 	public void damageReaction() {
-		
 		actionLockCounter = 0;
 //		direction = gp.player.direction;
 		onPath = true;
 	}
+	@Override
 	public void checkDrop() {
-		
 		// CAST A DIE
 		int i = new Random().nextInt(100) + 1;
-		
 		// SET THE MONSTER DROP
 		if(i < 50) {
 			dropItem(new OBJ_Coin_Bronze(gp));

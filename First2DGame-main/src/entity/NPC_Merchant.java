@@ -1,6 +1,7 @@
 package entity;
 
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import main.GamePanel;
 import object.OBJ_Axe;
 import object.OBJ_Key;
@@ -9,6 +10,7 @@ import object.OBJ_Potion_Red;
 import object.OBJ_Shield_Blue;
 import object.OBJ_Shield_Wood;
 import object.OBJ_Sword_Normal;
+
 
 public class NPC_Merchant extends Entity {
 
@@ -30,16 +32,20 @@ public class NPC_Merchant extends Entity {
 	}
 
 	public void getImage() {
-		up1 = setup("/npc/merchant_down_1", gp.tileSize, gp.tileSize);
-		up2 = setup("/npc/merchant_down_2", gp.tileSize, gp.tileSize);
-		down1 = setup("/npc/merchant_down_1", gp.tileSize, gp.tileSize);
-		down2 = setup("/npc/merchant_down_2", gp.tileSize, gp.tileSize);
-		left1 = setup("/npc/merchant_down_1", gp.tileSize, gp.tileSize);
-		left2 = setup("/npc/merchant_down_2", gp.tileSize, gp.tileSize);
-		right1 = setup("/npc/merchant_down_1", gp.tileSize, gp.tileSize);
-		right2 = setup("/npc/merchant_down_2", gp.tileSize, gp.tileSize);
-	}
-	public void setDialogue() {
+		// Cache merchant animation frames
+		BufferedImage frame1 = setup("/npc/merchant_down_1", gp.tileSize, gp.tileSize);
+		BufferedImage frame2 = setup("/npc/merchant_down_2", gp.tileSize, gp.tileSize);
+		
+		// Reuse frames for all directions
+		up1 = frame1;
+		up2 = frame2;
+		down1 = frame1;
+		down2 = frame2;
+		left1 = frame1;
+		left2 = frame2;
+		right1 = frame1;
+		right2 = frame2;
+	}	public void setDialogue() {
 		dialogues[0][0] = "He he, so you found me.\nI have some good stuff.\nDo you want to trade?";
 		dialogues[1][0] = "Come again, hehe!";
 		dialogues[2][0] = "You need more coin to buy that!";

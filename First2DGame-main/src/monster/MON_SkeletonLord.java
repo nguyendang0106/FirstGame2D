@@ -107,6 +107,7 @@ public class MON_SkeletonLord extends Entity {
 		dialogues[0][2] = "WELCOME TO YOUR DOOM!\nHAHAHA!!!";
 	}
 
+	@Override
 	public void setAction() {
 		if (inRage == false && life < maxLife / 2) {
 			inRage = true;
@@ -128,20 +129,18 @@ public class MON_SkeletonLord extends Entity {
 		}
 	}
 
+	@Override
 	public void damageReaction() {
-
 		actionLockCounter = 0;
 	}
 
+	@Override
 	public void checkDrop() {
-
 		gp.bossBattleOn = false;
 		Progress.skeletonLordDefeated = true;
-
 		// Restore the previous music
 		gp.stopMusic();
 		gp.playMusic(19);
-
 		// Remove the iron doors
 		for (int i = 0; i < gp.obj[1].length; i++) {
 			if (gp.obj[gp.currentMap][i] != null && gp.obj[gp.currentMap][i].name.equals(OBJ_Door_Iron.objName)) {
@@ -152,7 +151,6 @@ public class MON_SkeletonLord extends Entity {
 
 		// CAST A DIE
 		int i = new Random().nextInt(100) + 1;
-
 		// SET THE MONSTER DROP
 		if (i < 50) {
 			dropItem(new OBJ_Coin_Bronze(gp));

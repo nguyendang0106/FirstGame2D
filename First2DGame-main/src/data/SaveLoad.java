@@ -1,9 +1,7 @@
 package data;
 
 import java.io.*;
-import entity.Entity;
 import main.GamePanel;
-import object.*;
 
 public class SaveLoad {
 	

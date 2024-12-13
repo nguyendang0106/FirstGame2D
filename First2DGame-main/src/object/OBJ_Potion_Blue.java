@@ -24,13 +24,10 @@ public class OBJ_Potion_Blue extends Entity {
     }
 
     public void setDialogue() {
-
         dialogues[0][0] = "You drink the " + name + "!\n"
                 + "Your mana has been recorvered by " + value + ".";
     }
-
     public boolean use(Entity entity) {
-
         startDialogue(this, 0);
         entity.mana += value;
         gp.playSE(2);

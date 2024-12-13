@@ -7,7 +7,6 @@ public class OBJ_Key extends Entity{
 	
 	GamePanel gp;
 	public static final String objName = "Key";
-
 	
 	public OBJ_Key(GamePanel gp) {
 		super(gp);
@@ -28,10 +27,7 @@ public class OBJ_Key extends Entity{
 		dialogues[1][0] = "There's no door bruh...";
 	}
 	public boolean use(Entity entity) {
-		
-		
 		int objIndex = getDetected(entity, gp.obj, "Door");
-		
 		if(objIndex != 999) {
 			startDialogue(this,0);
 			gp.playSE(3);

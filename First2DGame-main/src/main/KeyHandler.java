@@ -160,11 +160,10 @@ public class KeyHandler implements KeyListener{
         	}
         }
         if(code == KeyEvent.VK_R) {
-        	switch(gp.currentMap) {
-        	case 0: gp.tileM.loadMap("/maps/worldV3.txt", 0); break;
-        	case 1: gp.tileM.loadMap("/maps/interior01.txt", 1); break;
-
-        	}
+			switch(gp.currentMap) {
+				case 0 -> gp.tileM.loadMap("/maps/worldV3.txt", 0);
+				case 1 -> gp.tileM.loadMap("/maps/interior01.txt", 1);
+			}
         }
         if(code == KeyEvent.VK_G) {
         	if(godModeOn == false) {
@@ -210,10 +209,11 @@ public class KeyHandler implements KeyListener{
 		}
 		
 		int maxCommandNum = 0;
-		switch(gp.ui.subState) {
-		case 0: maxCommandNum = 5; break;
-		case 3: maxCommandNum = 1; break;	
-		}
+		maxCommandNum = switch(gp.ui.subState) {
+			case 0 -> 5;
+			case 3 -> 1;
+			default -> 0;
+		};
 		
 		if(code == KeyEvent.VK_W) {
 			gp.ui.commandNum--;

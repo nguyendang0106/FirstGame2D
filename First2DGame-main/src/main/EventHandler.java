@@ -75,9 +75,16 @@ public class EventHandler{
 // 			else if(hit(3,26,41,"any") == true) {teleport2(2,8,7,gp.dungeon);} // to B1
 // 			else if(hit(3,25,27,"any") == true) {skeletonLord();} // BOSS
 			//new teleport ẻvent
-			if(hit(0, 41, 17, "any")==true) teleport2(0,28,84,gp.oasis);
-			if(hit(0, 87, 97, "any")==true) teleport2(0, 120, 84, gp.oasis);
-			if (hit(0, 76, 64, "any")==true) teleport2(1, 28, 105, gp.land);
+			if(hit(0,40,57,"any")==true) teleport2(0, 44, 65, gp.oasis);
+			if(hit(0,44,65,"any")==true) teleport2(0, 40, 57, gp.land);
+			if(hit(0,64,86,"any")==true) teleport2(0, 82, 73, gp.land);
+			if(hit(0,82,73,"any")==true) teleport2(0, 64, 86, gp.oasis);
+			if(hit(0,96,79,"any")==true) teleport2(1, 14, 96, gp.land);
+			if(hit(1,14,96,"any")==true) teleport2(0, 96, 79, gp.oasis);
+			if(hit(1,29,90,"any")==true) teleport2(2, 8, 28, gp.maze);
+			if(hit(1,30,90,"any")==true) teleport2(2, 8, 28, gp.maze);
+			if(hit(1,29,91,"any")==true) teleport2(2, 8, 28, gp.maze);
+			if(hit(1,30,91,"any")==true) teleport2(2, 8, 28, gp.maze);
 		}
 	}
 	public boolean hit(int map, int col, int row, String reqDirection) {

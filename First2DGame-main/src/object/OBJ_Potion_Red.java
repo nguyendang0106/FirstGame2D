@@ -22,15 +22,11 @@ public class OBJ_Potion_Red extends Entity {
 
 		setDialogue();
 	}
-
 	public void setDialogue() {
-
 		dialogues[0][0] = "You drink the " + name + "!\n"
 				+ "Your life has been recorvered by " + value + ".";
 	}
-
 	public boolean use(Entity entity) {
-
 		startDialogue(this, 0);
 		entity.life += value;
 		gp.playSE(2);

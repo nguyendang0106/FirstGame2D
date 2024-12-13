@@ -1,5 +1,5 @@
 00.png
-false
+true
 01.png
 true
 02.png

@@ -1,9 +1,8 @@
 package object;
 
-import java.awt.Color;
-
 import entity.Entity;
 import entity.Projectile;
+import java.awt.Color;
 import main.GamePanel;
 
 public class OBJ_Fireball extends Projectile{
@@ -37,7 +36,6 @@ public class OBJ_Fireball extends Projectile{
 		right2 = setup("/projectile/fireball_right_2", gp.tileSize, gp.tileSize);
 	}
 	public boolean haveResource(Entity user) {
-		
 		boolean haveResource = false;
 		if(user.mana >= useCost) {
 			haveResource = true;

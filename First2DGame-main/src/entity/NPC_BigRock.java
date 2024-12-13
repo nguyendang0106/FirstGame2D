@@ -2,8 +2,6 @@ package entity;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.util.Random;
-
 import main.GamePanel;
 import object.OBJ_Door_Iron;
 import tile_interactive.IT_MetalPlate;
@@ -35,6 +33,8 @@ public class NPC_BigRock extends Entity{
 		getImage();
 		setDialogue();
 	}
+
+
 	public void getImage() {
 
 		up1 = setup("/npc/bigrock", gp.tileSize, gp.tileSize);
@@ -45,7 +45,7 @@ public class NPC_BigRock extends Entity{
 		left2 = setup("/npc/bigrock", gp.tileSize, gp.tileSize);
 		right1 = setup("/npc/bigrock", gp.tileSize, gp.tileSize);
 		right2 = setup("/npc/bigrock", gp.tileSize, gp.tileSize);
-
+		
 	}
 	public void setDialogue() {
 		
@@ -80,7 +80,6 @@ public class NPC_BigRock extends Entity{
 		checkCollision();
 		
 		if(collisionOn == false) {
-			
 			switch (direction) {
 				case "up" -> worldY -= speed;
 				case "down" -> worldY += speed;
@@ -95,23 +94,27 @@ public class NPC_BigRock extends Entity{
 		ArrayList<InteractiveTile> plateList = new ArrayList<>();
 		ArrayList<Entity> rockList = new ArrayList<>();
 		
-		// Create a plate list
-		for(int i = 0; i < gp.iTile[1].length; i++) {
-			
-			if(gp.iTile[gp.currentMap][i] != null &&
-					gp.iTile[gp.currentMap][i].name != null &&
-					gp.iTile[gp.currentMap][i].name.equals(IT_MetalPlate.IT_NAME)) {
-				plateList.add(gp.iTile[gp.currentMap][i]);
-			}
-		}
-		// Create a rock list
-		for(int i = 0; i < gp.npc[1].length; i++) {
-			
-			if(gp.npc[gp.currentMap][i] != null &&
-					gp.npc[gp.currentMap][i].name.equals(NPC_BigRock.npcName)) {
-				rockList.add(gp.npc[gp.currentMap][i]);
-			}
-		}
+        // Create a plate list
+        if (gp.iTile != null && gp.iTile[gp.currentMap] != null) {
+            for(int i = 0; i < gp.iTile[gp.currentMap].length; i++) {
+                if(gp.iTile[gp.currentMap][i] != null && 
+                   gp.iTile[gp.currentMap][i].name != null &&
+                   gp.iTile[gp.currentMap][i].name.equals(IT_MetalPlate.IT_NAME)) {
+                    plateList.add(gp.iTile[gp.currentMap][i]);
+                }
+            }
+        }
+        
+        // Create a rock list
+        if (gp.npc != null && gp.npc[gp.currentMap] != null) {
+            for(int i = 0; i < gp.npc[gp.currentMap].length; i++) {
+                if(gp.npc[gp.currentMap][i] != null && 
+                   gp.npc[gp.currentMap][i].name != null &&
+                   gp.npc[gp.currentMap][i].name.equals(npcName)) {
+                    rockList.add(gp.npc[gp.currentMap][i]);
+                }
+            }
+        }
 		
 		int count = 0;
 		

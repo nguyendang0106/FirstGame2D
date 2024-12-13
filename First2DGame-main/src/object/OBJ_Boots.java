@@ -11,6 +11,5 @@ public class OBJ_Boots extends Entity{
 		super(gp);		
 		name = objName;
 		down1 = setup("/objects/boost", gp.tileSize, gp.tileSize);
-
 	}
 }
