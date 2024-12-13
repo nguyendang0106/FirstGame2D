@@ -31,8 +31,8 @@ public class MON_SuperVoi extends Entity {
 
         solidArea.x = 4;
         solidArea.y = 4;
-        solidArea.width = 10;
-        solidArea.height = 10;
+        solidArea.width = 40;
+        solidArea.height = 44;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         attackArea.width = 10;
