@@ -145,6 +145,7 @@ package environment;
 
 import java.awt.*;
 import java.util.Random;
+
 import main.GamePanel;
 
 public class EnvironmentManager {
@@ -177,14 +178,18 @@ public class EnvironmentManager {
     public void setup() {
         lighting = new Lighting(gp);
         initializeParticles();
-        // Bắt đầu với thời tiết fade in
-        if(gp.currentMap == 0) {
+        
+        if(gp.currentMap == 0 || gp.currentMap == 1) {
+            isRaining = true;
+            isSnowing = false;
+        } else if(gp.currentMap == 2 || gp.currentMap == 3) {
             isSnowing = true;
             isRaining = false;
         } else {
-            isRaining = true;
+            isRaining = false;
             isSnowing = false;
         }
+        
         weatherIntensity = 0f;
         isWeatherChanging = true;
         isIncreasing = true;
@@ -200,20 +205,19 @@ public class EnvironmentManager {
     }
 
     private void startWeatherChange() {
-        // Không bắt đầu thời tiết mới nếu đang đêm
-        if(lighting.dayState == lighting.night) {
-            return;
-        }
-
         int chance = random.nextInt(100);
         
-        if(chance < 75) { // 75% có thời tiết
-            if(gp.currentMap == 0) {
+        if(chance < 85) { // 75% có thời tiết
+            if(gp.currentMap == 0 || gp.currentMap == 1) {
+                isRaining = true;
+                isSnowing = false;
+            } else if(gp.currentMap == 2 || gp.currentMap == 3) {
                 isSnowing = true;
                 isRaining = false;
             } else {
-                isRaining = true;
+                isRaining = false;
                 isSnowing = false;
+                return;
             }
             weatherIntensity = 0f;
             isWeatherChanging = true;
@@ -221,9 +225,6 @@ public class EnvironmentManager {
             reinitializeParticles();
             weatherTimer = 0;
             isPaused = false;
-        } else {
-            isWeatherChanging = true;
-            isIncreasing = false;
         }
     }
 
@@ -234,16 +235,34 @@ public class EnvironmentManager {
 
         if(lighting != null) {
             lighting.update();
+        }
+        
+        // Kiểm tra thay đổi map
+        if(previousMap != gp.currentMap) {
+            if(gp.currentMap == 0 || gp.currentMap == 1) {
+                isRaining = true;
+                isSnowing = false;
+            } else if(gp.currentMap == 2 || gp.currentMap == 3) {
+                isSnowing = true;
+                isRaining = false;
+            } else {
+                isRaining = false;
+                isSnowing = false;
+            }
+            reinitializeParticles();
+            previousMap = gp.currentMap;
+        }
+
+        if(lighting != null) {
+            lighting.update();
             
-            // Kiểm tra chuyển đổi ngày/đêm
+
             if(previousDayState != lighting.dayState) {
                 if(lighting.dayState == lighting.night && (isRaining || isSnowing)) {
-                    // Nếu chuyển sang đêm và đang có thời tiết, bắt đầu fade out
                     isWeatherChanging = true;
                     isIncreasing = false;
                     isDayChanging = true;
                 } else if(lighting.dayState != lighting.night && isDayChanging) {
-                    // Nếu chuyển sang ngày và trước đó là đêm, có thể bắt đầu thời tiết mới
                     isDayChanging = false;
                     startWeatherChange();
                 }
@@ -291,7 +310,6 @@ public class EnvironmentManager {
             }
         }
         
-        // Update particles ngay cả khi là night
         if((isRaining || isSnowing) && !isPaused) {
             updateParticles();
         }
@@ -329,7 +347,6 @@ public class EnvironmentManager {
             lighting.draw(g2);
         }
 
-        // Chỉ vẽ thời tiết khi KHÔNG phải là night
         if((isRaining || isSnowing) && lighting.dayState != lighting.night) {
             int alpha = getWeatherAlpha();
             if(alpha > 0) {
@@ -366,10 +383,8 @@ public class EnvironmentManager {
         if(lighting.dayState == lighting.night) {
             return 0;
         } else if(lighting.dayState == lighting.dusk) {
-            // Giảm dần alpha khi chuyển sang dusk
             return (int)(100 * weatherIntensity * (1 - lighting.filterAlpha));
         } else if(lighting.dayState == lighting.dawn) {
-            // Tăng dần alpha khi chuyển sang dawn
             return (int)(100 * weatherIntensity * lighting.filterAlpha);
         } else { // day
             return (int)(180 * weatherIntensity);
@@ -396,7 +411,6 @@ public class EnvironmentManager {
             if(particles[i] == null) {
                 particles[i] = new Particle(gp);
             }
-            // Khởi tạo vị trí ngẫu nhiên trên toàn màn hình
             particles[i].x = gp.player.worldX - gp.player.screenX + random.nextInt(gp.screenWidth * 2) - gp.screenWidth/2;
             particles[i].y = gp.player.worldY - gp.player.screenY - random.nextInt(50);
             initParticleProperties(particles[i]);
@@ -404,17 +418,17 @@ public class EnvironmentManager {
     }
 
     private void initParticleProperties(Particle p) {
-        if(gp.currentMap == 0) { // Snow
+        if(gp.currentMap == 2 || gp.currentMap == 3) { // Snow
             p.speed = 1 + random.nextDouble() * 2;
             p.angle = random.nextDouble() * Math.PI * 2;
             p.size = 2 + random.nextInt(2);
             p.alpha = 180 + random.nextInt(75);
-        } else { // Rain
-            p.speed = 4 + random.nextDouble() * 3;
-            p.angle = Math.PI/6 + (random.nextDouble() - 0.5) * 0.2;
-            p.size = 2;
+        } else { 
+            p.speed = 5 + random.nextDouble() * 2;
+            p.angle = Math.PI/6 + (random.nextDouble() - 0.5) * 0.1;
+            p.size = 1;
             p.length = 10 + random.nextInt(5);
-            p.alpha = 140 + random.nextInt(40);
+            p.alpha = 100 + random.nextInt(40);
         }
     }
 
