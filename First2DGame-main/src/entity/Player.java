@@ -115,6 +115,9 @@ public class Player extends Entity {
 		inventory.add(new OBJ_Potion_Red(gp));
 		inventory.add(new OBJ_Shield_Blue(gp));
 		inventory.add(new OBJ_Sword_Normal(gp));
+		inventory.add(new OBJ_SuperSword(gp));
+		inventory.add(new OBJ_MegaSuperSword(gp));
+
 		inventory.add(new OBJ_Tent(gp));
 	}
 
@@ -548,7 +551,9 @@ public class Player extends Entity {
 
 			Entity selectedItem = inventory.get(itemIndex);
 
-			if (selectedItem.type == type_sword || selectedItem.type == type_axe || selectedItem.type == type_pickaxe) {
+			if (selectedItem.type == type_sword || selectedItem.type == type_supersword
+					|| selectedItem.type == type_megasupersword || selectedItem.type == type_axe
+					|| selectedItem.type == type_pickaxe) {
 
 				currentWeapon = selectedItem;
 				attack = getAttack();
