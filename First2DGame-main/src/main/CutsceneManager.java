@@ -24,18 +24,25 @@ public class CutsceneManager {
 	public final int ending = 2;
 	public CutsceneManager(GamePanel gp) {
 		this.gp = gp;
-		endCredit = "Program/Music/Art\n"
+		endCredit = "Program\n"
 		 		+ "Nguyen Tien Dang\n"
-		 		+ "Tester\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+				+ "Map\n"
+		 		+ "Nguyen Khac Giap\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		 		+ "Weather\n"
+		 		+ "Le Vu Hoang\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		 		+ "Character image/Weapon iamge\n"
+		 		+ "Vu Thanh Dat\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+				+ "Music/Art/Tester/Ideas/Production direction\n"
 		 		+ "Nguyen Tien Dang\n"
-		 		+ "Ideas\n"
-		 		+ "Nguyen Tien Dang\n"
-		 		+ "\n\n\n\n\n\n\n\n\n\n\n\n"
+		 		+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 		 		+ "Special Thanks\n"
-		 		+ "Someone\n"
-		 		+ "Someone\n"
-		 		+ "Someone\n"
-		 		+ "Someone\n\n\n\n\n\n\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+		 		+ "YOU <3\n"
+				+ "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 		 		+ "Thank you for playing!";
 	}
 	public void draw(Graphics2D g2) {
@@ -83,7 +90,7 @@ public class CutsceneManager {
 		
 		if(scenePhase == 1) {
 			gp.player.worldY -= 2;
-			if(gp.player.worldY < gp.tileSize*16) {
+			if(gp.player.worldY < gp.tileSize*40) {
 				scenePhase++;
 			}
 		}
@@ -180,7 +187,7 @@ public class CutsceneManager {
 			String text = "After the fierce battle with the Skeleton Lord,\n"
 					+ "the hero finally found the legendary treasure.\n"
 					+ "But this is not the end of his journey.\n"
-					+ "The hero's adventure has just bugun.";
+					+ "The hero's adventure has just begun.";
 			drawString(alpha, 38f, 200, text, 70);
 					
 			if(counterReached(600) == true) {
