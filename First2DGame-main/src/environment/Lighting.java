@@ -138,10 +138,10 @@ public class Lighting {
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
 		// DEBUG
 		String situation = switch(dayState) {
-			case day -> "Day";
-			case dusk -> "Dusk";
-			case night -> "Night";
-			case dawn -> "Dawn";
+			case day -> "";
+			case dusk -> "";
+			case night -> "";
+			case dawn -> "";
 			default -> "";
 		};
 		g2.setColor(Color.white);

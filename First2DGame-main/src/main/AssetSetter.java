@@ -77,8 +77,8 @@ public class AssetSetter {
 						case 1 -> gp.obj[mapNum][index].setLoot(new OBJ_Coin_Bronze(gp));
 						case 2 -> gp.obj[mapNum][index].setLoot(new OBJ_Axe(gp));
 						case 3 -> gp.obj[mapNum][index].setLoot(new OBJ_Boots(gp));
-						case 4 -> gp.obj[mapNum][index].setLoot(new OBJ_ManaCrystal(gp));
-						case 5 -> gp.obj[mapNum][index].setLoot(new OBJ_Heart(gp));
+						case 4 -> gp.obj[mapNum][index].setLoot(new OBJ_Potion_Blue(gp));
+						case 5 -> gp.obj[mapNum][index].setLoot(new OBJ_Potion_Red(gp));
 						case 6 -> gp.obj[mapNum][index].setLoot(new OBJ_Lantern(gp));
 						case 7 -> gp.obj[mapNum][index].setLoot(new OBJ_ManaCrystal(gp));
 						case 8 -> gp.obj[mapNum][index].setLoot(new OBJ_Shield_Blue(gp));
