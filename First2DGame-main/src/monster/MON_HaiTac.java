@@ -20,7 +20,7 @@ public class MON_HaiTac extends Entity {
 
         type = type_monster;
         name = "Hai Tac";
-        defaultSpeed = 1;
+        defaultSpeed = 4;
         speed = defaultSpeed;
         maxLife = 10;
         life = maxLife;

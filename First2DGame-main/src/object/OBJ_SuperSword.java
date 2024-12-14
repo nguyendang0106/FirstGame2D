@@ -13,12 +13,12 @@ public class OBJ_SuperSword extends Entity {
         type = type_supersword;
         name = objName;
         down1 = setup("/objects/supersword", gp.tileSize, gp.tileSize);
-        attackValue = 1;
+        attackValue = 10;
         attackArea.width = 24;
         attackArea.height = 24;
         description = "[" + name + "]\nAn old sword.";
-        price = 20;
-        knockBackPower = 2;
+        price = 300;
+        knockBackPower = 7;
         motion1_duration = 5;
         motion2_duration = 25;
     }

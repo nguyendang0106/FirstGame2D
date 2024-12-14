@@ -20,11 +20,11 @@ public class MON_Voi extends Entity {
 
         type = type_monster;
         name = "Elephent";
-        defaultSpeed = 1;
+        defaultSpeed = 4;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 20;
         life = maxLife;
-        attack = 8;
+        attack = 7;
         defense = 2;
         exp = 10;
         knockBackPower = 5;

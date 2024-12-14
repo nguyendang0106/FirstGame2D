@@ -184,10 +184,10 @@ public class CutsceneManager {
 			if(alpha > 1f) {
 				alpha = 1f;
 			}
-			String text = "After the fierce battle with the Skeleton Lord,\n"
-					+ "the hero finally found the legendary treasure.\n"
-					+ "But this is not the end of his journey.\n"
-					+ "The hero's adventure has just begun.";
+			String text = "After going through countless difficulties,\n"
+					+ "the hero obtained the legendary treasure.\n"
+					+ "But this is only the beginning on the path \n"
+					+ "to becoming the pirate king.";
 			drawString(alpha, 38f, 200, text, 70);
 					
 			if(counterReached(600) == true) {

@@ -20,13 +20,13 @@ public class MON_TuanLoc extends Entity {
 
         type = type_monster;
         name = "Tuan Loc";
-        defaultSpeed = 1;
+        defaultSpeed = 6;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 15;
         life = maxLife;
         attack = 8;
         defense = 2;
-        exp = 10;
+        exp = 15;
         knockBackPower = 5;
 
         solidArea.x = 4;

@@ -20,9 +20,9 @@ public class MON_Minatourus extends Entity {
 
         type = type_monster;
         name = "Minatourus";
-        defaultSpeed = 1;
+        defaultSpeed = 5;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 15;
         life = maxLife;
         attack = 8;
         defense = 2;

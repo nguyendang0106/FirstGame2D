@@ -48,26 +48,28 @@ public class Player extends Entity {
 	}
 
 	public void setDefaultValues() {
-		// worldX = gp.tileSize * 75;
-		// worldY = gp.tileSize * 15;
-		worldX = gp.tileSize * 62;
-		worldY = gp.tileSize * 47;
-		defaultSpeed = 8;
+		worldX = gp.tileSize * 75;
+		worldY = gp.tileSize * 15;
+		// worldX = gp.tileSize * 62;
+		// worldY = gp.tileSize * 47; // test map boss
+		// worldX = gp.tileSize * 16;
+		// worldY = gp.tileSize * 38; // test shop 2
+		defaultSpeed = 4;
 		speed = defaultSpeed;
 		direction = "down";
 		// PLAYER STATUS
 		level = 1;
-		maxLife = 50;
+		maxLife = 6;
 		life = maxLife;
 		maxMana = 4;
 		mana = maxMana;
 		ammo = 10;
-		strength = 2000; // The more strength he has, the more damage he gives.
+		strength = 5; // The more strength he has, the more damage he gives.
 		dexterity = 1; // The more dexterity he has, the less defense he receives.
 		exp = 0;
 		nextLevelExp = 5;
-		coin = 500;
-		currentWeapon = new OBJ_MegaSuperSword(gp);
+		coin = 100;
+		currentWeapon = new OBJ_Sword_Normal(gp);
 		currentShield = new OBJ_Shield_Wood(gp);
 		currentLight = null;
 		projectile = new OBJ_Fireball(gp);
@@ -83,8 +85,8 @@ public class Player extends Entity {
 
 	public void setDefaultPositions() {
 		gp.currentMap = 0;
-		worldX = gp.tileSize * 15;
-		worldY = gp.tileSize * 5;
+		worldX = gp.tileSize * 75;
+		worldY = gp.tileSize * 15;
 		direction = "down";
 	}
 
@@ -109,17 +111,16 @@ public class Player extends Entity {
 		inventory.clear();
 		inventory.add(currentWeapon);
 		inventory.add(currentShield);
-		inventory.add(new OBJ_Key(gp));
+		// inventory.add(new OBJ_Key(gp));
 		inventory.add(new OBJ_Axe(gp));
-		inventory.add(new OBJ_Lantern(gp));
-		inventory.add(new OBJ_Pickaxe(gp));
-		inventory.add(new OBJ_Potion_Blue(gp));
-		inventory.add(new OBJ_Potion_Red(gp));
-		inventory.add(new OBJ_Shield_Blue(gp));
-		inventory.add(new OBJ_Sword_Normal(gp));
-		inventory.add(new OBJ_SuperSword(gp));
-		inventory.add(new OBJ_MegaSuperSword(gp));
-
+		// inventory.add(new OBJ_Lantern(gp));
+		// inventory.add(new OBJ_Pickaxe(gp));
+		// inventory.add(new OBJ_Potion_Blue(gp));
+		// inventory.add(new OBJ_Potion_Red(gp));
+		// inventory.add(new OBJ_Shield_Blue(gp));
+		// inventory.add(new OBJ_Sword_Normal(gp));
+		// inventory.add(new OBJ_SuperSword(gp));
+		// inventory.add(new OBJ_MegaSuperSword(gp));
 		inventory.add(new OBJ_Tent(gp));
 	}
 

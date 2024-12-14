@@ -20,13 +20,13 @@ public class MON_Xacuop extends Entity {
 
         type = type_monster;
         name = "Xac_uop";
-        defaultSpeed = 1;
+        defaultSpeed = 4;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 20;
         life = maxLife;
-        attack = 8;
-        defense = 2;
-        exp = 10;
+        attack = 10;
+        defense = 5;
+        exp = 15;
         knockBackPower = 5;
 
         solidArea.x = 4;

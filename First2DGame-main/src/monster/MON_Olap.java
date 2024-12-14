@@ -20,12 +20,12 @@ public class MON_Olap extends Entity {
 
         type = type_monster;
         name = "Olap";
-        defaultSpeed = 1;
+        defaultSpeed = 6;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 20;
         life = maxLife;
-        attack = 8;
-        defense = 2;
+        attack = 12;
+        defense = 5;
         exp = 10;
         knockBackPower = 5;
         projectile = new OBJ_Rock(gp);

@@ -156,10 +156,12 @@ public class EventHandler{
 			if(hit(4,62,45,"any") == true) skeletonLord();
 
 			if(hit(0,78,16,"any") == true) teleport2(6, 55, 35, gp.indoor);
-			if(hit(6,55,34,"any") == true) teleport2(0,78,16,gp.land1);
+			if(hit(6,55,37,"any") == true) teleport2(0,78,16,gp.land1);
+			if(hit(6,54,37,"any") == true) teleport2(0,78,16,gp.land1);
 
 			if(hit(2,17,39,"any") == true) teleport2(7,55,35,gp.indoor);
-			if(hit(7,55,34,"any") == true) teleport2(2,17,39,gp.land1);
+			if(hit(7,55,37,"any") == true) teleport2(2,17,39,gp.land1);
+			if(hit(7,54,37,"any") == true) teleport2(2,17,39,gp.land1);
 
 			if(hit(3,93,10,"any") == true) teleport2(5,54,48,gp.maze1);
 			if(hit(3,92,10,"any") == true) teleport2(5,55,48,gp.maze1);

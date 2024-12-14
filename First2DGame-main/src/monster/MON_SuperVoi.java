@@ -20,14 +20,14 @@ public class MON_SuperVoi extends Entity {
 
         type = type_monster;
         name = "super Elephent";
-        defaultSpeed = 1;
+        defaultSpeed = 6;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 30;
         life = maxLife;
-        attack = 8;
-        defense = 2;
-        exp = 10;
-        knockBackPower = 5;
+        attack = 10;
+        defense = 5;
+        exp = 20;
+        knockBackPower = 8;
 
         solidArea.x = 4;
         solidArea.y = 4;

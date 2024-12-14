@@ -93,6 +93,53 @@ public class AssetSetter {
 					mapIndices.put(mapNum, index + 1);
 				}
 			}
+
+		int mapNum = 4;
+		int i = 0;
+		gp.obj[mapNum][i] = new OBJ_BlueHeart(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*62;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*36;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*62;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*35;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*70;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*45;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*51;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*35;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*61;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*35;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*61;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*36;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*61;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*37;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*62;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*37;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*63;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*37;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*63;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*36;
+		i++;
+		gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*63;
+    	gp.obj[mapNum][i].worldY = gp.tileSize*35;
+		i++;
 		}
 		catch (IOException e) {
 			System.err.println("Error reading chest.txt: " + e.getMessage());
@@ -146,6 +193,29 @@ public class AssetSetter {
 				System.err.println("Error closing reader: " + e.getMessage());
 			}
 		}
+
+		// MAP 7
+		int mapNum = 7;
+		int i = 0;
+		gp.npc[mapNum][i] = new NPC_Merchant(gp);
+		gp.npc[mapNum][i].worldX = gp.tileSize * 54;
+		gp.npc[mapNum][i].worldY = gp.tileSize * 28;
+		i++;
+		gp.npc[mapNum][i] = new NPC_First(gp);
+		gp.npc[mapNum][i].worldX = gp.tileSize * 50;
+		gp.npc[mapNum][i].worldY = gp.tileSize *25;
+		i++;
+
+		mapNum = 6;
+		i = 0;
+		gp.npc[mapNum][i] = new NPC_Merchant(gp);
+		gp.npc[mapNum][i].worldX = gp.tileSize * 54;
+		gp.npc[mapNum][i].worldY = gp.tileSize * 28;
+		i++;
+		gp.npc[mapNum][i] = new NPC_First(gp);
+		gp.npc[mapNum][i].worldX = gp.tileSize * 50;
+		gp.npc[mapNum][i].worldY = gp.tileSize *25;
+		i++;
 	}
 	public void setMonster() {
 		Map <Integer, Integer> mapIndices = new HashMap<>(); // Track indices for each map

@@ -20,12 +20,12 @@ public class MON_VipMinatourus extends Entity {
 
         type = type_monster;
         name = "VIP Minatourus";
-        defaultSpeed = 1;
+        defaultSpeed = 8;
         speed = defaultSpeed;
-        maxLife = 10;
+        maxLife = 20;
         life = maxLife;
-        attack = 8;
-        defense = 2;
+        attack = 15;
+        defense = 8;
         exp = 10;
         knockBackPower = 5;
 

@@ -23,11 +23,11 @@ public class MON_Ghost extends Entity {
         name = "Ghost";
         defaultSpeed = 4;
         speed = defaultSpeed;
-        maxLife = 7;
+        maxLife = 10;
         life = maxLife;
-        attack = 7;
+        attack = 10;
         defense = 0;
-        exp = 7;
+        exp = 15;
         projectile = new OBJ_Rock(gp);
 
         solidArea.x = 3;
@@ -71,7 +71,7 @@ public class MON_Ghost extends Entity {
             // checkStartChasingOrNot(gp.player, 5, 100);
 
             // Get a random direction
-            getRandomDirection(30);
+            getRandomDirection(20);
         }
     }
 
