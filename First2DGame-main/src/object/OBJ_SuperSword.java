@@ -14,8 +14,8 @@ public class OBJ_SuperSword extends Entity {
         name = objName;
         down1 = setup("/objects/supersword", gp.tileSize, gp.tileSize);
         attackValue = 10;
-        attackArea.width = 24;
-        attackArea.height = 24;
+        attackArea.width = 35;
+        attackArea.height = 35;
         description = "[" + name + "]\nAn old sword.";
         price = 300;
         knockBackPower = 7;

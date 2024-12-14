@@ -20,7 +20,7 @@ public class MON_SuperVoi extends Entity {
 
         type = type_monster;
         name = "super Elephent";
-        defaultSpeed = 6;
+        defaultSpeed = 4;
         speed = defaultSpeed;
         maxLife = 30;
         life = maxLife;

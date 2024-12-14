@@ -20,7 +20,7 @@ public class MON_TuanLoc extends Entity {
 
         type = type_monster;
         name = "Tuan Loc";
-        defaultSpeed = 6;
+        defaultSpeed = 4;
         speed = defaultSpeed;
         maxLife = 15;
         life = maxLife;

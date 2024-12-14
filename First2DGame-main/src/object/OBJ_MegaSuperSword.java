@@ -14,8 +14,8 @@ public class OBJ_MegaSuperSword extends Entity {
         name = objName;
         down1 = setup("/objects/megasupersword", gp.tileSize, gp.tileSize);
         attackValue = 20;
-        attackArea.width = 24;
-        attackArea.height = 24;
+        attackArea.width = 40;
+        attackArea.height = 40;
         description = "[" + name + "]\nAn old sword.";
         price = 500;
         knockBackPower = 10;

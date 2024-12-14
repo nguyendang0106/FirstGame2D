@@ -168,6 +168,24 @@ public class EventHandler{
 
 			if(hit(5,54,49,"any") == true) teleport2(3,92,10,gp.land2);
 			if(hit(5,55,49,"any") == true) teleport2(3,92,10,gp.land2);
+
+			// save point
+			if(hit(2,27,21,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,28,22,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,29,22,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,30,23,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,31,24,"up") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,32,24,"up") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,33,24,"up") == true) { healingPool(gp.dialogueState);}
+
+			if(hit(2,35,22,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,35,23,"left") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,36,22,"up") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,37,21,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,38,21,"up") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,39,19,"left") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,39,18,"left") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,39,17,"left") == true) { healingPool(gp.dialogueState);}
 			
 		}
 	}

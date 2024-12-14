@@ -20,7 +20,7 @@ public class MON_Olap extends Entity {
 
         type = type_monster;
         name = "Olap";
-        defaultSpeed = 6;
+        defaultSpeed = 4;
         speed = defaultSpeed;
         maxLife = 20;
         life = maxLife;
