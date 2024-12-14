@@ -39,7 +39,7 @@ public class AssetSetter {
 					int index = mapIndices.getOrDefault(mapNum, 0);
 					switch (type) {
 						case 1 -> gp.obj[mapNum][index] = new OBJ_Door_Iron(gp);
-						
+						case 2 -> gp.obj[mapNum][index] = new OBJ_Tent(gp);
 					}
 					gp.obj[mapNum][index].worldX = gp.tileSize * x;
 					gp.obj[mapNum][index].worldY = gp.tileSize * y;
@@ -55,6 +55,56 @@ public class AssetSetter {
 				System.err.println("Error closing reader: " + e.getMessage());
 			}
 		}
+
+		is = getClass().getResourceAsStream("/maps/chest.txt");
+		if (is == null) {
+			System.err.println("Could not find chest.txt file");
+			return;
+		}
+		BufferedReader reader2 = new BufferedReader(new InputStreamReader(is));
+		try{
+			while ((line = reader2.readLine()) != null) {
+				String[] parts = line.split(" ");
+				if (parts.length == 4) {
+					int mapNum = Integer.parseInt(parts[0]);
+					int type = Integer.parseInt(parts[1]);
+					int y = Integer.parseInt(parts[2]);
+					int x = Integer.parseInt(parts[3]);
+					// Get or initialize index for this map
+					int index = mapIndices.getOrDefault(mapNum, 0);
+					gp.obj[mapNum][index] = new OBJ_Chest(gp);
+					switch (type) {
+						case 1 -> gp.obj[mapNum][index].setLoot(new OBJ_Coin_Bronze(gp));
+						case 2 -> gp.obj[mapNum][index].setLoot(new OBJ_Axe(gp));
+						case 3 -> gp.obj[mapNum][index].setLoot(new OBJ_Boots(gp));
+						case 4 -> gp.obj[mapNum][index].setLoot(new OBJ_BlueHeart(gp));
+						case 5 -> gp.obj[mapNum][index].setLoot(new OBJ_Heart(gp));
+						case 6 -> gp.obj[mapNum][index].setLoot(new OBJ_Lantern(gp));
+						case 7 -> gp.obj[mapNum][index].setLoot(new OBJ_ManaCrystal(gp));
+						case 8 -> gp.obj[mapNum][index].setLoot(new OBJ_Shield_Blue(gp));
+						case 9 -> gp.obj[mapNum][index].setLoot(new OBJ_Coin_Bronze(gp));
+						case 10 -> gp.obj[mapNum][index].setLoot(new OBJ_Tent(gp));
+						case 11 -> gp.obj[mapNum][index].setLoot(new OBJ_Sword_Normal(gp));
+						case 12 -> gp.obj[mapNum][index].setLoot(new OBJ_SuperSword(gp));
+					}
+					gp.obj[mapNum][index].worldX = gp.tileSize * x;
+					gp.obj[mapNum][index].worldY = gp.tileSize * y;
+					// Increment and store the index for this map
+					mapIndices.put(mapNum, index + 1);
+				}
+			}
+		}
+		catch (IOException e) {
+			System.err.println("Error reading chest.txt: " + e.getMessage());
+		}
+		finally {
+			try {
+				reader2.close();
+			} catch (IOException e) {
+				System.err.println("Error closing reader: " + e.getMessage());
+			}
+		}
+
 
 	}
 	public void setNPC() {

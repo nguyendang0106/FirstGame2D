@@ -65,9 +65,9 @@ false
 32.png
 false
 33.png
-true
+false
 34.png
-true
+false
 35.png
 false
 36.png
@@ -81,9 +81,9 @@ false
 40.png
 true
 41.png
-true
+false
 42.png
-true
+false
 43.png
 false
 44.png

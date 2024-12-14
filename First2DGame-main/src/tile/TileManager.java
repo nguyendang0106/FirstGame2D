@@ -55,6 +55,7 @@ public class TileManager {
 		loadMap("/maps/4maze.txt", 4);
 		loadMap("/maps/5tw.txt", 5);
 		loadMap("/maps/6shop.txt", 6);
+		loadMap("/maps/7shop.txt", 7);
 
 	}
 	

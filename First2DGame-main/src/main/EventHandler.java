@@ -105,11 +105,9 @@ public class EventHandler{
 			if(hit(1,44,15,"any") == true) teleport2(0,45,55,gp.oasis1);
 
 
-			if(hit(2,14,46,"any") == true) teleport2(1,13,48,gp.oasis2);
-			if(hit(1,13,48,"any") == true) teleport2(2,14,46,gp.land1);
-			if(hit(1,14,48,"any") == true) teleport2(2,14,46,gp.land1);
-			if(hit(1,13,49,"any") == true) teleport2(2,14,46,gp.land1);
-			if(hit(1,14,49,"any") == true) teleport2(2,14,46,gp.land1);
+			if(hit(2,14,46,"any") == true) teleport2(1,12,48,gp.oasis2);
+			if(hit(1,12,48,"any") == true) teleport2(2,14,46,gp.land1);
+			if(hit(1,12,49,"any") == true) teleport2(2,14,46,gp.land1);
 
 			if(hit(2,24,4,"any") == true) teleport2(3,33,47,gp.land2);
 			if(hit(2,25,4,"any") == true) teleport2(3,33,47,gp.land2);
@@ -148,10 +146,8 @@ public class EventHandler{
 
 			if(hit(3,33,48,"any") == true) teleport2(2,24,4,gp.land1);
 
-			if(hit(2,29,40,"any") == true) teleport2(4, 8, 3, gp.maze2);
-			if(hit(2,30,41,"any") == true) teleport2(4, 8, 3, gp.maze2);
-			if(hit(2,29,41,"any") == true) teleport2(4, 8, 3, gp.maze2);
-			if(hit(2,30,40,"any") == true) teleport2(4, 8, 3, gp.maze2);
+			if(hit(2,29,39,"any") == true) teleport2(4, 8, 3, gp.maze2);
+			if(hit(2,30,39,"any") == true) teleport2(4, 8, 3, gp.maze2);
 
 			if(hit(4,53,35,"any") == true) skeletonLord();
 			if(hit(4,53,36,"any") == true) skeletonLord();
@@ -159,19 +155,18 @@ public class EventHandler{
 			if(hit(4,71,45,"any") == true) skeletonLord();
 			if(hit(4,70,45,"any") == true) skeletonLord();
 
+			if(hit(0,78,16,"any") == true) teleport2(6, 55, 35, gp.indoor);
+			if(hit(6,55,34,"any") == true) teleport2(0,78,16,gp.land1);
 
-			// if(hit(2,17,39,"any") == true) teleport2(6,29,40,gp.land);
-			// if(hit(6,29,40,"any") == true) teleport2(2,17,39,gp.land);
+			if(hit(2,17,39,"any") == true) teleport2(7,55,35,gp.indoor);
+			if(hit(7,55,34,"any") == true) teleport2(2,17,39,gp.land1);
 
-			if(hit(3,93,11,"any") == true) teleport2(5,54,48,gp.maze1);
-			if(hit(3,92,11,"any") == true) teleport2(5,55,48,gp.maze1);
-			if(hit(3,93,12,"any") == true) teleport2(5,54,48,gp.maze1);
-			if(hit(3,92,12,"any") == true) teleport2(5,55,48,gp.maze1);
+			if(hit(3,93,10,"any") == true) teleport2(5,54,48,gp.maze1);
+			if(hit(3,92,10,"any") == true) teleport2(5,55,48,gp.maze1);
 
-			if(hit(5,54,49,"any") == true) teleport2(3,92,12,gp.land2);
-			if(hit(5,55,49,"any") == true) teleport2(3,92,12,gp.land2);
+			if(hit(5,54,49,"any") == true) teleport2(3,92,10,gp.land2);
+			if(hit(5,55,49,"any") == true) teleport2(3,92,10,gp.land2);
 			
-			// if(hit(5,29,40,"any") == true) teleport2(3,93,11,gp.land);
 		}
 	}
 	public boolean hit(int map, int col, int row, String reqDirection) {
