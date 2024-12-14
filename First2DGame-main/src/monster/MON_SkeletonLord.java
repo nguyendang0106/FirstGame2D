@@ -25,10 +25,10 @@ public class MON_SkeletonLord extends Entity {
 		name = monName;
 		defaultSpeed = 1;
 		speed = defaultSpeed;
-		maxLife = 50;
+		maxLife = 500;
 		life = maxLife;
-		attack = 10;
-		defense = 2;
+		attack = 50;
+		defense = 50;
 		exp = 50;
 		knockBackPower = 5;
 		sleep = true;
@@ -53,54 +53,54 @@ public class MON_SkeletonLord extends Entity {
 
 	public void getImage() {
 
-		int i = 3;
+		int i = 5;
 
 		if (inRage == false) {
-			up1 = setup("/monster/bossphase1_up_1", gp.tileSize * i, gp.tileSize * i);
-			up2 = setup("/monster/bossphase1_up_2", gp.tileSize * i, gp.tileSize * i);
-			down1 = setup("/monster/bossphase1_down_1", gp.tileSize * i, gp.tileSize * i);
-			down2 = setup("/monster/bossphase1_down_2", gp.tileSize * i, gp.tileSize * i);
-			left1 = setup("/monster/bossphase1_left_1", gp.tileSize * i, gp.tileSize * i);
-			left2 = setup("/monster/bossphase1_left_2", gp.tileSize * i, gp.tileSize * i);
-			right1 = setup("/monster/bossphase1_right_1", gp.tileSize * i, gp.tileSize * i);
-			right2 = setup("/monster/bossphase1_right_2", gp.tileSize * i, gp.tileSize * i);
+			up1 = setup("/monster/skeletonlord_up_1", gp.tileSize * i, gp.tileSize * i);
+			up2 = setup("/monster/skeletonlord_up_2", gp.tileSize * i, gp.tileSize * i);
+			down1 = setup("/monster/skeletonlord_down_1", gp.tileSize * i, gp.tileSize * i);
+			down2 = setup("/monster/skeletonlord_down_2", gp.tileSize * i, gp.tileSize * i);
+			left1 = setup("/monster/skeletonlord_left_1", gp.tileSize * i, gp.tileSize * i);
+			left2 = setup("/monster/skeletonlord_left_2", gp.tileSize * i, gp.tileSize * i);
+			right1 = setup("/monster/skeletonlord_right_1", gp.tileSize * i, gp.tileSize * i);
+			right2 = setup("/monster/skeletonlord_right_2", gp.tileSize * i, gp.tileSize * i);
 		}
 		if (inRage == true) {
-			up1 = setup("/monster/bossphase2_up_1", gp.tileSize * i, gp.tileSize * i);
-			up2 = setup("/monster/bossphase2_up_2", gp.tileSize * i, gp.tileSize * i);
-			down1 = setup("/monster/bossphase2_down_1", gp.tileSize * i, gp.tileSize * i);
-			down2 = setup("/monster/bossphase2_down_2", gp.tileSize * i, gp.tileSize * i);
-			left1 = setup("/monster/bossphase2_left_1", gp.tileSize * i, gp.tileSize * i);
-			left2 = setup("/monster/bossphase2_left_2", gp.tileSize * i, gp.tileSize * i);
-			right1 = setup("/monster/bossphase2_right_1", gp.tileSize * i, gp.tileSize * i);
-			right2 = setup("/monster/bossphase2_right_2", gp.tileSize * i, gp.tileSize * i);
+			up1 = setup("/monster/skeletonlord_phase2_up_1", gp.tileSize * i, gp.tileSize * i);
+			up2 = setup("/monster/skeletonlord_phase2_up_2", gp.tileSize * i, gp.tileSize * i);
+			down1 = setup("/monster/skeletonlord_phase2_down_1", gp.tileSize * i, gp.tileSize * i);
+			down2 = setup("/monster/skeletonlord_phase2_down_2", gp.tileSize * i, gp.tileSize * i);
+			left1 = setup("/monster/skeletonlord_phase2_left_1", gp.tileSize * i, gp.tileSize * i);
+			left2 = setup("/monster/skeletonlord_phase2_left_2", gp.tileSize * i, gp.tileSize * i);
+			right1 = setup("/monster/skeletonlord_phase2_right_1", gp.tileSize * i, gp.tileSize * i);
+			right2 = setup("/monster/skeletonlord_phase2_right_2", gp.tileSize * i, gp.tileSize * i);
 		}
 
 	}
 
 	public void getAttackImage() {
 
-		int i = 3;
+		int i = 5;
 
 		if (inRage == false) {
-			attackUp1 = setup("/monster/bossphase1_attackup_1", gp.tileSize * i, gp.tileSize * i * 2);
-			attackUp2 = setup("/monster/bossphase1_attackup_2", gp.tileSize * i, gp.tileSize * i * 2);
-			attackDown1 = setup("/monster/bossphase1_attackdown_1", gp.tileSize * i, gp.tileSize * i * 2);
-			attackDown2 = setup("/monster/bossphase1_attackdown_2", gp.tileSize * i, gp.tileSize * i * 2);
-			attackLeft1 = setup("/monster/bossphase1_attackleft_1", gp.tileSize * i * 2, gp.tileSize * i);
-			attackLeft2 = setup("/monster/bossphase1_attackleft_2", gp.tileSize * i * 2, gp.tileSize * i);
-			attackRight1 = setup("/monster/bossphase1_attackright_1", gp.tileSize * i * 2, gp.tileSize * i);
-			attackRight2 = setup("/monster/bossphase1_attackright_2", gp.tileSize * i * 2, gp.tileSize * i);
+			attackUp1 = setup("/monster/skeletonlord_attack_up_1", gp.tileSize * i, gp.tileSize * i * 2);
+			attackUp2 = setup("/monster/skeletonlord_attack_up_2", gp.tileSize * i, gp.tileSize * i * 2);
+			attackDown1 = setup("/monster/skeletonlord_attack_down_1", gp.tileSize * i, gp.tileSize * i * 2);
+			attackDown2 = setup("/monster/skeletonlord_attack_down_2", gp.tileSize * i, gp.tileSize * i * 2);
+			attackLeft1 = setup("/monster/skeletonlord_attack_left_1", gp.tileSize * i * 2, gp.tileSize * i);
+			attackLeft2 = setup("/monster/skeletonlord_attack_left_2", gp.tileSize * i * 2, gp.tileSize * i);
+			attackRight1 = setup("/monster/skeletonlord_attack_right_1", gp.tileSize * i * 2, gp.tileSize * i);
+			attackRight2 = setup("/monster/skeletonlord_attack_right_2", gp.tileSize * i * 2, gp.tileSize * i);
 		}
 		if (inRage == true) {
-			attackUp1 = setup("/monster/bossphase2_attackup_1", gp.tileSize * i, gp.tileSize * i * 2);
-			attackUp2 = setup("/monster/bossphase2_attackup_2", gp.tileSize * i, gp.tileSize * i * 2);
-			attackDown1 = setup("/monster/bossphase2_attackdown_1", gp.tileSize * i, gp.tileSize * i * 2);
-			attackDown2 = setup("/monster/bossphase2_attackdown_2", gp.tileSize * i, gp.tileSize * i * 2);
-			attackLeft1 = setup("/monster/bossphase2_attackleft_1", gp.tileSize * i * 2, gp.tileSize * i);
-			attackLeft2 = setup("/monster/bossphase2_attackleft_2", gp.tileSize * i * 2, gp.tileSize * i);
-			attackRight1 = setup("/monster/bossphase2_attackright_1", gp.tileSize * i * 2, gp.tileSize * i);
-			attackRight2 = setup("/monster/bossphase2_attackright_2", gp.tileSize * i * 2, gp.tileSize * i);
+			attackUp1 = setup("/monster/skeletonlord_phase2_attack_up_1", gp.tileSize * i, gp.tileSize * i * 2);
+			attackUp2 = setup("/monster/skeletonlord_phase2_attack_up_2", gp.tileSize * i, gp.tileSize * i * 2);
+			attackDown1 = setup("/monster/skeletonlord_phase2_attack_down_1", gp.tileSize * i, gp.tileSize * i * 2);
+			attackDown2 = setup("/monster/skeletonlord_phase2_attack_down_2", gp.tileSize * i, gp.tileSize * i * 2);
+			attackLeft1 = setup("/monster/skeletonlord_phase2_attack_left_1", gp.tileSize * i * 2, gp.tileSize * i);
+			attackLeft2 = setup("/monster/skeletonlord_phase2_attack_left_2", gp.tileSize * i * 2, gp.tileSize * i);
+			attackRight1 = setup("/monster/skeletonlord_phase2_attack_right_1", gp.tileSize * i * 2, gp.tileSize * i);
+			attackRight2 = setup("/monster/skeletonlord_phase2_attack_right_2", gp.tileSize * i * 2, gp.tileSize * i);
 		}
 
 	}
@@ -119,7 +119,7 @@ public class MON_SkeletonLord extends Entity {
 			inRage = true;
 			getImage();
 			getAttackImage();
-			defaultSpeed++;
+			defaultSpeed += 3;
 			speed = defaultSpeed;
 			attack *= 2;
 		}
