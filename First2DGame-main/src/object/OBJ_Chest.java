@@ -24,6 +24,7 @@ public class OBJ_Chest extends Entity{
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 	}
+	@Override
 	public void setLoot(Entity loot) {
 		this.loot = loot;
 		setDialogue();
@@ -34,6 +35,7 @@ public class OBJ_Chest extends Entity{
 		dialogues[1][0] = "You open the chest and find a " + loot.name + "\nYou obtain the " + loot.name + "!";
 		dialogues[2][0] = "It's empty.";
 	}
+	@Override
 	public void interact() {
 		if(opened == false) {
 			gp.playSE(3);

@@ -77,7 +77,7 @@ public class AssetSetter {
 						case 1 -> gp.obj[mapNum][index].setLoot(new OBJ_Coin_Bronze(gp));
 						case 2 -> gp.obj[mapNum][index].setLoot(new OBJ_Axe(gp));
 						case 3 -> gp.obj[mapNum][index].setLoot(new OBJ_Boots(gp));
-						case 4 -> gp.obj[mapNum][index].setLoot(new OBJ_BlueHeart(gp));
+						case 4 -> gp.obj[mapNum][index].setLoot(new OBJ_ManaCrystal(gp));
 						case 5 -> gp.obj[mapNum][index].setLoot(new OBJ_Heart(gp));
 						case 6 -> gp.obj[mapNum][index].setLoot(new OBJ_Lantern(gp));
 						case 7 -> gp.obj[mapNum][index].setLoot(new OBJ_ManaCrystal(gp));
@@ -104,50 +104,6 @@ public class AssetSetter {
 				System.err.println("Error closing reader: " + e.getMessage());
 			}
 		}
-
-		int mapNum = 4;
-		int j = 0;
-		gp.obj[mapNum][j] = new OBJ_BlueHeart(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*62;
-    	gp.obj[mapNum][j].worldY = gp.tileSize*35;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*62;
-		gp.obj[mapNum][j].worldY = gp.tileSize*36;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*61;
-		gp.obj[mapNum][j].worldY = gp.tileSize*35;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*63;
-		gp.obj[mapNum][j].worldY = gp.tileSize*35;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*61;
-		gp.obj[mapNum][j].worldY = gp.tileSize*36;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*63;
-		gp.obj[mapNum][j].worldY = gp.tileSize*36;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*70;
-		gp.obj[mapNum][j].worldY = gp.tileSize*45;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*71;
-		gp.obj[mapNum][j].worldY = gp.tileSize*45;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Door_Iron(gp);
-		gp.obj[mapNum][j].worldX = gp.tileSize*52;
-		gp.obj[mapNum][j].worldY = gp.tileSize*35;
-		j++;
-		gp.obj[mapNum][j] = new OBJ_Chest(gp);
-		gp.obj[mapNum][j].setLoot(new OBJ_Pickaxe(gp));
-		gp.obj[mapNum][j].worldX = gp.tileSize*30;
-		gp.obj[mapNum][j].worldY = gp.tileSize*29;
-		j++;
 
 
 	}
@@ -264,41 +220,15 @@ public class AssetSetter {
 					int y = Integer.parseInt(parts[3]);
 					int index = mapIndices.getOrDefault(mapNum, 0);
 					// Get or initialize index for this map
-					if(type == 1){
-						gp.iTile[mapNum][index] = new IT_MetalPlate(gp, y, x);
-						// Increment and store the index for this map
-						mapIndices.put(mapNum, index + 1);
-						continue;
-					}
-					else{
-						gp.iTile[mapNum][index] = new IT_tree(gp, y, x, type);
+					switch (type) {
+						case 1 -> gp.iTile[mapNum][index] = new IT_MetalPlate(gp, y, x);
+						case 2 -> gp.iTile[mapNum][index] = new IT_DestructibleWall(gp, y, x);
+						default -> gp.iTile[mapNum][index] = new IT_tree(gp, y, x, type);
 					}
 					// Increment and store the index for this map
 					mapIndices.put(mapNum, index + 1);
 				}
 			}
-
-		int mapNum = 4;
-		int i = 0;
-		
-		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,28,26);i++;
-		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,28,27);i++;
-		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,26,28);i++;
-		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,26,29);i++;
-		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,33,6);i++;
-		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,6,22);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,10,22);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,10,24);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,18);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,19);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,20);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,21);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,18,13);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,18,14);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,22,28);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,30,28);i++;
-		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,32,28);i++;
-
 		} catch (IOException e) {
 			System.err.println("Error reading ITobject.txt: " + e.getMessage());
 		} finally {
