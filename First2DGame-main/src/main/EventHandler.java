@@ -149,11 +149,11 @@ public class EventHandler{
 			if(hit(2,29,39,"any") == true) teleport2(4, 8, 3, gp.maze2);
 			if(hit(2,30,39,"any") == true) teleport2(4, 8, 3, gp.maze2);
 
-			if(hit(4,53,35,"any") == true) skeletonLord();
-			if(hit(4,53,36,"any") == true) skeletonLord();
+			// if(hit(4,53,35,"any") == true) skeletonLord();
+			// if(hit(4,53,36,"any") == true) skeletonLord();
+			// if(hit(4,62,45,"any") == true) skeletonLord();
+			// if(hit(4,71,45,"any") == true) skeletonLord();
 			if(hit(4,62,45,"any") == true) skeletonLord();
-			if(hit(4,71,45,"any") == true) skeletonLord();
-			if(hit(4,70,45,"any") == true) skeletonLord();
 
 			if(hit(0,78,16,"any") == true) teleport2(6, 55, 35, gp.indoor);
 			if(hit(6,55,34,"any") == true) teleport2(0,78,16,gp.land1);
