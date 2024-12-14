@@ -119,6 +119,11 @@ public class AssetSetter {
 		gp.obj[mapNum][j].worldX = gp.tileSize*52;
 		gp.obj[mapNum][j].worldY = gp.tileSize*35;
 		j++;
+		gp.obj[mapNum][j] = new OBJ_Chest(gp);
+		gp.obj[mapNum][j].setLoot(new OBJ_Pickaxe(gp));
+		gp.obj[mapNum][j].worldX = gp.tileSize*30;
+		gp.obj[mapNum][j].worldY = gp.tileSize*29;
+		j++;
 
 
 	}
@@ -248,6 +253,28 @@ public class AssetSetter {
 					mapIndices.put(mapNum, index + 1);
 				}
 			}
+
+		int mapNum = 4;
+		int i = 0;
+		
+		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,28,26);i++;
+		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,28,27);i++;
+		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,26,28);i++;
+		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,26,29);i++;
+		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,33,6);i++;
+		gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,6,22);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,10,22);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,10,24);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,18);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,19);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,20);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,38,21);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,18,13);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,18,14);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,22,28);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,30,28);i++;
+		// gp.iTile[mapNum][i] = new IT_DestructibleWall(gp,32,28);i++;
+
 		} catch (IOException e) {
 			System.err.println("Error reading ITobject.txt: " + e.getMessage());
 		} finally {
