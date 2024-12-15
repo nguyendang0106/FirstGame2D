@@ -20,7 +20,7 @@ public class MON_TuanLoc extends Entity {
 
         type = type_monster;
         name = "Tuan Loc";
-        defaultSpeed = 4;
+        defaultSpeed = 3;
         speed = defaultSpeed;
         maxLife = 15;
         life = maxLife;
@@ -115,9 +115,9 @@ public class MON_TuanLoc extends Entity {
         int i = new Random().nextInt(100) + 1;
 
         // SET THE MONSTER DROP
-        if (i < 50) {
-            dropItem(new OBJ_Coin_Bronze(gp));
-        }
+        // if (i < 50) {
+        //     dropItem(new OBJ_Coin_Bronze(gp));
+        // }
         if (i >= 50 && i < 75) {
             dropItem(new OBJ_Heart(gp));
         }

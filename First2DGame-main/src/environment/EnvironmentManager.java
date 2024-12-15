@@ -207,7 +207,7 @@ public class EnvironmentManager {
     private void startWeatherChange() {
         int chance = random.nextInt(100);
         
-        if(chance < 85) { // 75% có thời tiết
+        if(chance < 85) { // 85% có thời tiết
             if(gp.currentMap == 0 || gp.currentMap == 1) {
                 isRaining = true;
                 isSnowing = false;

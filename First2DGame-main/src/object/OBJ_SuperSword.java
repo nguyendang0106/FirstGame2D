@@ -17,7 +17,7 @@ public class OBJ_SuperSword extends Entity {
         attackArea.width = 35;
         attackArea.height = 35;
         description = "[" + name + "]\nAn old sword.";
-        price = 300;
+        price = 100;
         knockBackPower = 7;
         motion1_duration = 5;
         motion2_duration = 25;

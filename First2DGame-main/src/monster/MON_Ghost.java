@@ -70,6 +70,9 @@ public class MON_Ghost extends Entity {
             // // Check if it starts chasing
             // checkStartChasingOrNot(gp.player, 5, 100);
 
+            // Check if it shoots a projectile
+            checkShootOrNot(200, 30);
+
             // Get a random direction
             getRandomDirection(20);
         }
@@ -88,9 +91,9 @@ public class MON_Ghost extends Entity {
         int i = new Random().nextInt(100) + 1;
 
         // SET THE MONSTER DROP
-        if (i < 50) {
-            dropItem(new OBJ_Coin_Bronze(gp));
-        }
+        // if (i < 50) {
+        //     dropItem(new OBJ_Coin_Bronze(gp));
+        // }
         if (i >= 50 && i < 75) {
             dropItem(new OBJ_Heart(gp));
         }

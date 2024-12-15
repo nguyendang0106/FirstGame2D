@@ -7,6 +7,7 @@ import entity.Entity;
 import main.GamePanel;
 import object.OBJ_Coin_Bronze;
 import object.OBJ_Door_Iron;
+import object.OBJ_Fireball;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
 
@@ -25,10 +26,10 @@ public class MON_SkeletonLord extends Entity {
 		name = monName;
 		defaultSpeed = 1;
 		speed = defaultSpeed;
-		maxLife = 500;
+		maxLife = 50;
 		life = maxLife;
-		attack = 50;
-		defense = 50;
+		attack = 20;
+		defense = 0;
 		exp = 50;
 		knockBackPower = 5;
 		sleep = true;
@@ -135,6 +136,8 @@ public class MON_SkeletonLord extends Entity {
 		// Check if it attacks
 		if (attacking == false) {
 			checkAttackOrNot(60, gp.tileSize * 7, gp.tileSize * 5);
+			// // Check if it shoots a projectile 
+			// checkShootOrNot(200, 30);
 		}
 	}
 
@@ -164,9 +167,9 @@ public class MON_SkeletonLord extends Entity {
 		int i = new Random().nextInt(100) + 1;
 
 		// SET THE MONSTER DROP
-		if (i < 50) {
-			dropItem(new OBJ_Coin_Bronze(gp));
-		}
+		// if (i < 50) {
+		// 	dropItem(new OBJ_Coin_Bronze(gp));
+		// }
 		if (i >= 50 && i < 75) {
 			dropItem(new OBJ_Heart(gp));
 		}

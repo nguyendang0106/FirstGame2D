@@ -76,16 +76,18 @@ public class AssetSetter {
 					switch (type) {
 						case 1 -> gp.obj[mapNum][index].setLoot(new OBJ_Coin_Bronze(gp));
 						case 2 -> gp.obj[mapNum][index].setLoot(new OBJ_Axe(gp));
-						case 3 -> gp.obj[mapNum][index].setLoot(new OBJ_Boots(gp));
+						case 3 -> gp.obj[mapNum][index].setLoot(new OBJ_Potion_Blue(gp));
 						case 4 -> gp.obj[mapNum][index].setLoot(new OBJ_Potion_Blue(gp));
 						case 5 -> gp.obj[mapNum][index].setLoot(new OBJ_Potion_Red(gp));
 						case 6 -> gp.obj[mapNum][index].setLoot(new OBJ_Lantern(gp));
-						case 7 -> gp.obj[mapNum][index].setLoot(new OBJ_ManaCrystal(gp));
-						case 8 -> gp.obj[mapNum][index].setLoot(new OBJ_Shield_Blue(gp));
+						case 7 -> gp.obj[mapNum][index].setLoot(new OBJ_Potion_Red(gp));
+						case 8 -> gp.obj[mapNum][index].setLoot(new OBJ_Shield_Wood(gp));
 						case 9 -> gp.obj[mapNum][index].setLoot(new OBJ_Coin_Bronze(gp));
 						case 10 -> gp.obj[mapNum][index].setLoot(new OBJ_Tent(gp));
 						case 11 -> gp.obj[mapNum][index].setLoot(new OBJ_Sword_Normal(gp));
 						case 12 -> gp.obj[mapNum][index].setLoot(new OBJ_SuperSword(gp));
+						case 13 -> gp.obj[mapNum][index].setLoot(new OBJ_Pickaxe(gp));
+						case 14 -> gp.obj[mapNum][index].setLoot(new OBJ_MegaSuperSword(gp));
 					}
 					gp.obj[mapNum][index].worldX = gp.tileSize * x;
 					gp.obj[mapNum][index].worldY = gp.tileSize * y;

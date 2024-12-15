@@ -85,9 +85,9 @@ public class MON_RedSlime extends Entity{
 		int i = new Random().nextInt(100) + 1;
 		
 		// SET THE MONSTER DROP
-		if(i < 50) {
-			dropItem(new OBJ_Coin_Bronze(gp));
-		}
+		// if(i < 50) {
+		// 	dropItem(new OBJ_Coin_Bronze(gp));
+		// }
 		if( i >= 50 && i < 75) {
 			dropItem(new OBJ_Heart(gp));
 		}

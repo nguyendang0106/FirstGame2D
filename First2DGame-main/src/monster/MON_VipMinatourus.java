@@ -20,7 +20,7 @@ public class MON_VipMinatourus extends Entity {
 
         type = type_monster;
         name = "VIP Minatourus";
-        defaultSpeed = 4;
+        defaultSpeed = 3;
         speed = defaultSpeed;
         maxLife = 20;
         life = maxLife;
@@ -114,9 +114,9 @@ public class MON_VipMinatourus extends Entity {
         int i = new Random().nextInt(100) + 1;
 
         // SET THE MONSTER DROP
-        if (i < 50) {
-            dropItem(new OBJ_Coin_Bronze(gp));
-        }
+        // if (i < 50) {
+        //     dropItem(new OBJ_Coin_Bronze(gp));
+        // }
         if (i >= 50 && i < 75) {
             dropItem(new OBJ_Heart(gp));
         }

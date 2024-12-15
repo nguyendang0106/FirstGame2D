@@ -52,10 +52,10 @@ public class TileManager {
 		loadMap("/maps/1oasis.txt", 1);
 		loadMap("/maps/2land.txt", 2);
 		loadMap("/maps/3land.txt", 3);
-		loadMap("/maps/4maze.txt", 4);
-		loadMap("/maps/5tw.txt", 5);
-		loadMap("/maps/6shop.txt", 6);
-		loadMap("/maps/7shop.txt", 7);
+		loadMap("/maps/4maze.txt", 4); // boss
+		loadMap("/maps/5tw.txt", 5);  // rương
+		loadMap("/maps/6shop.txt", 6); // shop1
+		loadMap("/maps/7shop.txt", 7); // shop2
 
 	}
 	

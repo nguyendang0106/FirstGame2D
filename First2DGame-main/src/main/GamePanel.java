@@ -31,7 +31,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public int maxWorldCol;
 	public int maxWorldRow;
 	public final int maxMap = 10;
-	public int currentMap = 0;
+	public int currentMap = 4;
 	
 	// FOR FULL SCREEN
 	int screenWidth2 = screenWidth;
@@ -95,7 +95,9 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int maze1 = 53;
 	public final int maze2 = 54;
 
-	public final int indoor = 60;
+	public final int indoor1 = 60;
+	public final int indoor2 = 61;
+
 
 
 	public GamePanel() {
@@ -361,9 +363,7 @@ public class GamePanel extends JPanel implements Runnable{
 			if(nextArea == oasis1 || nextArea == oasis2) {
 				playMusic(0);
 			}
-			if(nextArea == land1 || nextArea == land2 
-			|| nextArea == indoor
-			) {
+			if(nextArea == land1 || nextArea == land2 || nextArea == indoor1 || nextArea == indoor2) {
 				playMusic(18);
 			}
 			if(nextArea == maze1 || nextArea == maze2) {

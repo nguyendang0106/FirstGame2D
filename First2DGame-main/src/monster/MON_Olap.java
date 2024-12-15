@@ -5,6 +5,7 @@ import java.util.Random;
 import entity.Entity;
 import main.GamePanel;
 import object.OBJ_Coin_Bronze;
+import object.OBJ_Fireball;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
 import object.OBJ_Rock;
@@ -20,7 +21,8 @@ public class MON_Olap extends Entity {
 
         type = type_monster;
         name = "Olap";
-        defaultSpeed = 4;
+        level = 10;
+        defaultSpeed = 3;
         speed = defaultSpeed;
         maxLife = 20;
         life = maxLife;
@@ -28,7 +30,7 @@ public class MON_Olap extends Entity {
         defense = 5;
         exp = 10;
         knockBackPower = 5;
-        projectile = new OBJ_Rock(gp);
+        projectile = new OBJ_Fireball(gp);  
 
         solidArea.x = 4;
         solidArea.y = 4;
@@ -80,6 +82,9 @@ public class MON_Olap extends Entity {
 
             // Search the direction to go
             searchPath(getGoalCol(gp.player), getGoalRow(gp.player));
+
+            // Check if it shoots a projectile
+            checkShootOrNot(200, 30);
         } else {
             // Check if it starts chasing
             checkStartChasingOrNot(gp.player, 5, 100);
@@ -107,9 +112,9 @@ public class MON_Olap extends Entity {
         int i = new Random().nextInt(100) + 1;
 
         // SET THE MONSTER DROP
-        if (i < 50) {
-            dropItem(new OBJ_Coin_Bronze(gp));
-        }
+        // if (i < 50) {
+        //     dropItem(new OBJ_Coin_Bronze(gp));
+        // }
         if (i >= 50 && i < 75) {
             dropItem(new OBJ_Heart(gp));
         }

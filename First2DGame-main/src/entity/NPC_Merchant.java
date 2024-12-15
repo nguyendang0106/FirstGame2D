@@ -7,6 +7,7 @@ import object.OBJ_Axe;
 import object.OBJ_Key;
 import object.OBJ_Lantern;
 import object.OBJ_MegaSuperSword;
+import object.OBJ_Pickaxe;
 import object.OBJ_Potion_Blue;
 import object.OBJ_Potion_Red;
 import object.OBJ_Shield_Blue;
@@ -68,6 +69,8 @@ public class NPC_Merchant extends Entity {
 		inventory.add(new OBJ_Shield_Wood(gp));
 		inventory.add(new OBJ_Lantern(gp));
 		inventory.add(new OBJ_Tent(gp));
+		inventory.add(new OBJ_Pickaxe(gp));
+
 	}
 	@Override
 	public void speak() {

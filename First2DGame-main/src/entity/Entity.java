@@ -121,6 +121,8 @@ public class Entity {
 	public final int type_pickaxe = 10;
 	public final int type_supersword = 11;
 	public final int type_megasupersword = 12;
+	public final int type_consumandpick = 13;
+
 
 	public Entity(GamePanel gp) {
 		this.gp = gp;

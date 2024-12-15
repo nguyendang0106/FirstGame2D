@@ -64,90 +64,114 @@ public class EventHandler{
 		if(canTouchEvent == true) {
 
 			//new teleport ẻvent
-			if(hit(0,18,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,19,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,20,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,21,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,22,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,23,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,24,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,25,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,26,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,27,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,28,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,29,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,30,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,31,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,32,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,33,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,34,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,35,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,36,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,37,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,38,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,39,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,40,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,41,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,42,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,43,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,44,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,45,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,46,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,47,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,48,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,49,55,"any") == true) teleport2(1,44,15,gp.oasis2);	
-			if(hit(0,50,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,51,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,52,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,53,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,54,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(0,55,55,"any") == true) teleport2(1,44,15,gp.oasis2);
-			if(hit(1,44,15,"any") == true) teleport2(0,45,55,gp.oasis1);
+			if(hit(0,18,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,19,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,20,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,21,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,22,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,23,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,24,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,25,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,26,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,27,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,28,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,29,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,30,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,31,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,32,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,33,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,34,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,35,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,36,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,37,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,38,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,39,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,40,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,41,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,42,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,43,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,44,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,45,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,46,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,47,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,48,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,49,55,"down") == true) teleport2(1,44,15,gp.oasis2);	
+			if(hit(0,50,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,51,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,52,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,53,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,54,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(0,55,55,"down") == true) teleport2(1,44,15,gp.oasis2);
+			if(hit(1,44,15,"up") == true) teleport2(0,45,55,gp.oasis1);
+
+			if(hit(1,12,50,"up") == true) teleport2(2,14,46,gp.land1);
+			if(hit(1,13,50,"up") == true) teleport2(2,14,46,gp.land1);
+			if(hit(1,14,50,"up") == true) teleport2(2,14,46,gp.land1);
+			if(hit(1,15,50,"up") == true) teleport2(2,14,46,gp.land1);
+
+			if(hit(2,14,46,"up") == true) teleport2(1,13,50,gp.oasis2);
+
+			if(hit(1,57,9,"left") == true) teleport(1,12,49);
+			if(hit(1,15,49,"left") == true) teleport(1,55,9);
+			if(hit(1,15,48,"left") == true) teleport(1,55,9);
+			if(hit(1,55,9,"right") == true) teleport(1,15,49);
+
+			if(hit(1,12,49,"right") == true) teleport(1,57,9);
+			if(hit(1,12,48,"right") == true) teleport(1,57,9);
+
+			if(hit(1,56,8,"down") == true) teleport(1,13,50);
 
 
-			if(hit(2,14,46,"any") == true) teleport2(1,12,48,gp.oasis2);
-			if(hit(1,12,48,"any") == true) teleport2(2,14,46,gp.land1);
-			if(hit(1,12,49,"any") == true) teleport2(2,14,46,gp.land1);
+			if(hit(1,56,10,"up") == true) teleport(1,13,47);
 
-			if(hit(2,24,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,25,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,26,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,27,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,28,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,29,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,30,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,31,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,32,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,33,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,34,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,35,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,36,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,37,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,38,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,39,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,40,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,41,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,42,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,43,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,44,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,45,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,46,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,47,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,48,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,49,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,50,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,51,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,52,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,53,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,54,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,55,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,56,4,"any") == true) teleport2(3,33,47,gp.land2);
-			if(hit(2,57,4,"any") == true) teleport2(3,33,47,gp.land2);
 
-			if(hit(3,33,48,"any") == true) teleport2(2,24,4,gp.land1);
 
-			if(hit(2,29,39,"any") == true) teleport2(4, 8, 3, gp.maze2);
-			if(hit(2,30,39,"any") == true) teleport2(4, 8, 3, gp.maze2);
+			// if(hit(1,12,48,"any") == true) teleport2(2,14,46,gp.land1);
+			// if(hit(1,12,49,"any") == true) teleport2(2,14,46,gp.land1);
+
+			if(hit(2,24,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,25,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,26,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,27,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,28,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,29,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,30,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,31,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,32,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,33,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,34,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,35,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,36,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,37,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,38,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,39,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,40,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,41,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,42,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,43,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,44,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,45,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,46,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,47,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,48,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,49,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,50,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,51,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,52,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,53,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,54,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,55,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,56,4,"up") == true) teleport2(3,33,47,gp.land2);
+			if(hit(2,57,4,"up") == true) teleport2(3,33,47,gp.land2);
+
+			if(hit(3,33,48,"down") == true) teleport2(2,37,4,gp.land1);
+
+			// boss
+			if(hit(2,28,42,"up") == true) teleport2(4, 8, 4, gp.maze2);
+			if(hit(2,29,42,"up") == true) teleport2(4, 8, 4, gp.maze2);
+			if(hit(2,30,42,"up") == true) teleport2(4, 8, 4, gp.maze2);
+			if(hit(2,31,42,"up") == true) teleport2(4, 8, 4, gp.maze2);
+
 
 			// if(hit(4,53,35,"any") == true) skeletonLord();
 			// if(hit(4,53,36,"any") == true) skeletonLord();
@@ -155,19 +179,23 @@ public class EventHandler{
 			// if(hit(4,71,45,"any") == true) skeletonLord();
 			if(hit(4,62,45,"any") == true) skeletonLord();
 
-			if(hit(0,78,16,"any") == true) teleport2(6, 55, 35, gp.indoor);
-			if(hit(6,55,37,"any") == true) teleport2(0,78,16,gp.land1);
-			if(hit(6,54,37,"any") == true) teleport2(0,78,16,gp.land1);
+			// shop
+			if(hit(0,78,16,"up") == true) teleport2(6, 55, 35, gp.indoor1);
+			if(hit(6,55,37,"down") == true) teleport2(0,78,16,gp.oasis1);
+			if(hit(6,54,37,"down") == true) teleport2(0,78,16,gp.oasis1);
 
-			if(hit(2,17,39,"any") == true) teleport2(7,55,35,gp.indoor);
-			if(hit(7,55,37,"any") == true) teleport2(2,17,39,gp.land1);
-			if(hit(7,54,37,"any") == true) teleport2(2,17,39,gp.land1);
+			if(hit(2,17,39,"up") == true) teleport2(7,55,35,gp.indoor2);
+			if(hit(7,55,37,"down") == true) teleport2(2,17,39,gp.land1);
+			if(hit(7,54,37,"down") == true) teleport2(2,17,39,gp.land1);
 
-			if(hit(3,93,10,"any") == true) teleport2(5,54,48,gp.maze1);
-			if(hit(3,92,10,"any") == true) teleport2(5,55,48,gp.maze1);
+			// rương
+			if(hit(3,91,13,"up") == true) teleport2(5,54,48,gp.maze1);
+			if(hit(3,92,13,"up") == true) teleport2(5,54,48,gp.maze1);
+			if(hit(3,93,13,"up") == true) teleport2(5,54,48,gp.maze1);
+			if(hit(3,94,13,"up") == true) teleport2(5,54,48,gp.maze1);
 
-			if(hit(5,54,49,"any") == true) teleport2(3,92,10,gp.land2);
-			if(hit(5,55,49,"any") == true) teleport2(3,92,10,gp.land2);
+			if(hit(5,54,49,"down") == true) teleport2(3,92,13,gp.land2);
+			if(hit(5,55,49,"down") == true) teleport2(3,92,13,gp.land2);
 
 			// save point
 			if(hit(2,27,21,"any") == true) { healingPool(gp.dialogueState);}

@@ -48,24 +48,28 @@ public class Player extends Entity {
 	}
 
 	public void setDefaultValues() {
-		worldX = gp.tileSize * 75;
-		worldY = gp.tileSize * 15;
-		// worldX = gp.tileSize * 62;
-		// worldY = gp.tileSize * 47; // test map boss
+		// worldX = gp.tileSize * 75;
+		// worldY = gp.tileSize * 15;
+		worldX = gp.tileSize * 62;
+		worldY = gp.tileSize * 47; // test map boss
 		// worldX = gp.tileSize * 16;
 		// worldY = gp.tileSize * 38; // test shop 2
-		defaultSpeed = 4;
+		// worldX = gp.tileSize * 85;
+		// worldY = gp.tileSize * 15; // test nhà rương
+		// worldX = gp.tileSize * 29;
+		// worldY = gp.tileSize * 35; // test nhà boss
+		defaultSpeed = 6;
 		speed = defaultSpeed;
 		direction = "down";
 		// PLAYER STATUS
 		level = 1;
-		maxLife = 6;
+		maxLife = 12;
 		life = maxLife;
 		maxMana = 4;
 		mana = maxMana;
 		ammo = 10;
-		strength = 5; // The more strength he has, the more damage he gives.
-		dexterity = 1; // The more dexterity he has, the less defense he receives.
+		strength = 20; // The more strength he has, the more damage he gives.
+		dexterity = 5; // The more dexterity he has, the less defense he receives.
 		exp = 0;
 		nextLevelExp = 5;
 		coin = 100;
@@ -113,10 +117,10 @@ public class Player extends Entity {
 		inventory.add(currentShield);
 		// inventory.add(new OBJ_Key(gp));
 		inventory.add(new OBJ_Axe(gp));
-		// inventory.add(new OBJ_Lantern(gp));
-		// inventory.add(new OBJ_Pickaxe(gp));
-		// inventory.add(new OBJ_Potion_Blue(gp));
-		// inventory.add(new OBJ_Potion_Red(gp));
+		inventory.add(new OBJ_Lantern(gp));
+		inventory.add(new OBJ_Pickaxe(gp));
+		inventory.add(new OBJ_Potion_Blue(gp));
+		inventory.add(new OBJ_Potion_Red(gp));
 		// inventory.add(new OBJ_Shield_Blue(gp));
 		// inventory.add(new OBJ_Sword_Normal(gp));
 		// inventory.add(new OBJ_SuperSword(gp));
