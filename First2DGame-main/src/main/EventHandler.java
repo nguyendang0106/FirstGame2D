@@ -214,7 +214,23 @@ public class EventHandler{
 			if(hit(2,39,19,"left") == true) { healingPool(gp.dialogueState);}
 			if(hit(2,39,18,"left") == true) { healingPool(gp.dialogueState);}
 			if(hit(2,39,17,"left") == true) { healingPool(gp.dialogueState);}
-			
+			if(hit(2,38,16,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,37,15,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,36,15,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,35,14,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,33,13,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,32,13,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,31,14,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,30,15,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,29,15,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,28,15,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,27,16,"right") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,27,17,"right") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,27,18,"any") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,26,18,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,25,18,"down") == true) { healingPool(gp.dialogueState);}
+			if(hit(2,24,18,"down") == true) { healingPool(gp.dialogueState);}
+
 		}
 	}
 	public boolean hit(int map, int col, int row, String reqDirection) {

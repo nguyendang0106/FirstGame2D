@@ -48,10 +48,10 @@ public class Player extends Entity {
 	}
 
 	public void setDefaultValues() {
-		// worldX = gp.tileSize * 75;
-		// worldY = gp.tileSize * 15;
-		worldX = gp.tileSize * 62;
-		worldY = gp.tileSize * 47; // test map boss
+		worldX = gp.tileSize * 75;
+		worldY = gp.tileSize * 15;
+		// worldX = gp.tileSize * 62;
+		// worldY = gp.tileSize * 47; // test map boss
 		// worldX = gp.tileSize * 16;
 		// worldY = gp.tileSize * 38; // test shop 2
 		// worldX = gp.tileSize * 85;
