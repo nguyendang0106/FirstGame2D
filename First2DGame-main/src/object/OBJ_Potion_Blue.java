@@ -1,5 +1,7 @@
 package object;
 
+import java.util.Random;
+
 import entity.Entity;
 import main.GamePanel;
 
@@ -16,7 +18,7 @@ public class OBJ_Potion_Blue extends Entity {
         name = objName;
         value = 2;
         down1 = setup("/objects/potion_blue", gp.tileSize, gp.tileSize);
-        description = "[Blue Potion]\nHeals your life by " + value + ".";
+        description = "[Blue Potion]\nHeals your mana by " + value + ".";
         price = 25;
         stackable = true;
 
@@ -28,9 +30,9 @@ public class OBJ_Potion_Blue extends Entity {
                 + "Your mana has been recorvered by " + value + ".";
     }
     public boolean use(Entity entity) {
-        startDialogue(this, 0);
-        entity.mana += value;
-        gp.playSE(2);
-        return true;
+            startDialogue(this, 0);
+            entity.mana += value;
+            gp.playSE(2);
+            return true;
     }
 }

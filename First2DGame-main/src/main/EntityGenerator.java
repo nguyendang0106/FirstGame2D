@@ -39,6 +39,7 @@ public class EntityGenerator {
 
 			case OBJ_MegaSuperSword.objName -> new OBJ_MegaSuperSword(gp);
 			case OBJ_Tent.objName -> new OBJ_Tent(gp);
+			case OBJ_TuiMu.objName -> new OBJ_TuiMu(gp);
 			default -> null;
 		};
 		return obj;

@@ -5,7 +5,7 @@ import main.GamePanel;
 
 public class OBJ_SuperSword extends Entity {
 
-    public static final String objName = "NSuper Sword";
+    public static final String objName = "Super Sword";
 
     public OBJ_SuperSword(GamePanel gp) {
         super(gp);

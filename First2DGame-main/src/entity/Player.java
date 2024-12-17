@@ -68,7 +68,7 @@ public class Player extends Entity {
 		maxMana = 4;
 		mana = maxMana;
 		ammo = 10;
-		strength = 20; // The more strength he has, the more damage he gives.
+		strength = 5; // The more strength he has, the more damage he gives.
 		dexterity = 5; // The more dexterity he has, the less defense he receives.
 		exp = 0;
 		nextLevelExp = 5;
@@ -117,15 +117,23 @@ public class Player extends Entity {
 		inventory.add(currentShield);
 		// inventory.add(new OBJ_Key(gp));
 		inventory.add(new OBJ_Axe(gp));
-		inventory.add(new OBJ_Lantern(gp));
-		inventory.add(new OBJ_Pickaxe(gp));
+		// inventory.add(new OBJ_Lantern(gp));
+		// inventory.add(new OBJ_Pickaxe(gp));
 		inventory.add(new OBJ_Potion_Blue(gp));
 		inventory.add(new OBJ_Potion_Red(gp));
+		inventory.add(new OBJ_TuiMu(gp));
 		// inventory.add(new OBJ_Shield_Blue(gp));
 		// inventory.add(new OBJ_Sword_Normal(gp));
 		// inventory.add(new OBJ_SuperSword(gp));
 		// inventory.add(new OBJ_MegaSuperSword(gp));
-		inventory.add(new OBJ_Tent(gp));
+		// inventory.add(new OBJ_Tent(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
+		// inventory.add(new OBJ_TuiMu(gp));
 	}
 
 	public int getAttack() {

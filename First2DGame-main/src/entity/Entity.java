@@ -954,4 +954,9 @@ public class Entity {
 		}
 		return index;
 	}
+	public void checkLevelUp() {
+
+        // Implementation of checkLevelUp method
+
+    }
 }
