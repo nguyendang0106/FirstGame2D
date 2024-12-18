@@ -50,14 +50,16 @@ public class Player extends Entity {
 	public void setDefaultValues() {
 		// worldX = gp.tileSize * 75;
 		// worldY = gp.tileSize * 15;
-		worldX = gp.tileSize * 62;
-		worldY = gp.tileSize * 47; // test map boss
+		// worldX = gp.tileSize * 62;
+		// worldY = gp.tileSize * 47; // test map boss
 		// worldX = gp.tileSize * 16;
 		// worldY = gp.tileSize * 38; // test shop 2
 		// worldX = gp.tileSize * 85;
 		// worldY = gp.tileSize * 15; // test nhà rương
 		// worldX = gp.tileSize * 29;
 		// worldY = gp.tileSize * 35; // test nhà boss
+		worldX = gp.tileSize * 30;
+		 worldY = gp.tileSize * 47;
 		defaultSpeed = 6;
 		speed = defaultSpeed;
 		direction = "down";
